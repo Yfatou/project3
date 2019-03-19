@@ -1,4 +1,4 @@
-// const router = require("express").Router();
+const router = require("express").Router();
 import axios from "axios";
 
 const BASEURL = "https://www.zipcodeapi.com/rest/GaufizMLSvdzZfMvgs72U1RWprK4SZKCTKRvVYkqC2gDp1aZsoLA175LS51bQ4mn/state-zips.json/il";
@@ -29,4 +29,4 @@ export default {
 //   .put(booksController.update)
 //   .delete(booksController.remove);
 
-// module.exports = router;
+module.exports = router;
