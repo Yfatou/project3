@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const serviceSchema = new Schema({
   service: { type: String, required: true },
-  available: { type: Boolean, default: false, required: true },
+  available: { type: Boolean, default: false },
   time: String,
   date: { type: Date, default: Date.now }
 });

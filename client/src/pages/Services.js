@@ -1,37 +1,31 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
 
-class Books extends Component {
+class Services extends Component {
   state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
+    services: [],
+    service: "",
+    available: false,
+    time: "",
+    date: ""
   };
 
   componentDidMount() {
-    this.loadBooks();
+    this.loadServices();
   }
 
-  loadBooks = () => {
-    API.getBooks()
+  loadServices = () => {
+    API.getServices()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ services: res.data, service: "", available: "", time: "", data: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
-      .catch(err => console.log(err));
-  };
+  // deleteService = id => {
+  //   API.deleteService(id)
+  //     .then(res => this.loadServices())
+  //     .catch(err => console.log(err));
+  // };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -42,13 +36,14 @@ class Books extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
+    if (this.state.service) {
+      API.saveService({
+        service: this.state.service,
+        available: this.state.available,
+        time: this.state.time,
+        date: this.state.date
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadServices())
         .catch(err => console.log(err));
     }
   };
@@ -57,38 +52,45 @@ class Books extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+          <Col size="md-12">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>Service Request Form</h1>
             </Jumbotron>
             <form>
               <Input
-                value={this.state.title}
+                value={this.state.service}
                 onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
+                name="service"
+                placeholder="Service (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.available}
                 onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
+                name="available"
+                placeholder="Available"
               />
-              <TextArea
-                value={this.state.synopsis}
+              <Input
+                value={this.state.time}
                 onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="time"
+                placeholder="Time "
+              />
+              <Input
+                value={this.state.date}
+                onChange={this.handleInputChange}
+                name="date"
+                placeholder="Date"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.service)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit Service Request
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
+
+          {/* <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>Books On My List</h1>
             </Jumbotron>
@@ -108,11 +110,11 @@ class Books extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     );
   }
 }
 
-export default Books;
+export default Services;
