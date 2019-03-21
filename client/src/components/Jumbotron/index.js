@@ -1,14 +1,13 @@
 import React from "react";
+import SignUpBtn from "../SignUpBtn"
 
 function Jumbotron({ children }) {
-  return (
-    <div
-      style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
-      className="jumbotron"
-    >
-      {children}
-    </div>
-  );
+    return (
+        <div className="jumbotron">
+            {children}
+            <SignUpBtn />
+        </div>
+    );
 }
 
 export default Jumbotron;
