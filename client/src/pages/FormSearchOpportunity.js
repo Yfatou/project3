@@ -6,8 +6,9 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
-import { BookList, BookListItem } from "../components/BookList";
+import {ServiceList, ServiceListItem } from "../components/ServiceList";
 import { Container, Row, Col } from "../components/Grid";
 
 class FormSearchOpportunity extends Component {
@@ -77,10 +78,10 @@ class FormSearchOpportunity extends Component {
               {!this.state.services.length ? (
                 <h1 className="text-center">No Opportunities available in your selected area.</h1>
               ) : (
-                <List>
+                <ServiceList>
                {this.state.services.map(service => (
-                  <ListItem key={service._id}>
-                    <Link to={"/services/" + service._id}>
+                  <ServiceListItem key={service._id}>
+                    {/* <Link to={"/services/" + service._id}> */}
                      <strong>
                        Service: {service.title} 
                        Zip: {service.zip}
@@ -88,11 +89,11 @@ class FormSearchOpportunity extends Component {
                        Time: {service.time} 
                        <button>Available{service.available }</button>
                      </strong>
-                   </Link>
+                   {/* </Link> */}
                    <DeleteBtn onClick={() => this.deleteService(service._id)} />
-                 </ListItem>
+                 </ServiceListItem>
               ))}
-            </List>
+            </ServiceList>
               )}
             </Col>
           </Row>
