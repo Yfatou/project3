@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import Card from "../components/Card";
 
 
 class FormServiceRequest  extends Component {
@@ -46,6 +43,7 @@ class FormServiceRequest  extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    // alert("Hello from handleFormSubmit");
     if (this.state.title && this.state.zip) {
       API.saveService({
         title: this.state.title,
@@ -61,12 +59,15 @@ class FormServiceRequest  extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <div id = "cardBody" >
+
+    
+      <Container fluid >
         <Row>
           <Col size="md-12">
-            <Jumbotron>
+            <Card>
               <h1>What Service Would You Like to Request For?</h1>
-            </Jumbotron>
+           
             <form>
               <Input
                 value={this.state.title}
@@ -90,7 +91,7 @@ class FormServiceRequest  extends Component {
                 value={this.state.time}
                 onChange={this.handleInputChange}
                 name="time"
-                placeholder="Time (required)"
+                placeholder="Time (Optional)"
               />
               <TextArea
                 value={this.state.notes}
@@ -105,10 +106,12 @@ class FormServiceRequest  extends Component {
                 Submit Service Request
               </FormBtn>
             </form>
+            </Card>
           </Col>
          
         </Row>
       </Container>
+      </div>
     );
   }
 }
