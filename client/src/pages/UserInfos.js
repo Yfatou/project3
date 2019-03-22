@@ -21,20 +21,30 @@ class UserInfos extends Component {
   onSuccess(googleUser) {
     const profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId());
+    const userId = profile.getId;
+
     console.log("Name: " + profile.getName());
+    const userName = profile.getName;
+
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail());
+    const userEmail = profile.getEmail;
 
   }
-  render() {
-    return (
-        <div>
-            <div id={GOOGLE_BUTTON_ID}/>
-            <Footer />
-        </div>
-    );
-  }
-};
+//   render() {
+//     return (
+//         <div>
+//             <div id={GOOGLE_BUTTON_ID}/>
+//             <form>
+//                 <Input
+//                     value ="userName"
+
+
+//             </form>
+//             <Footer />
+//         </div>
+//     );
+  };
 
 // IF THE USER RETRIEVE THE INFORMATIONS AFTER, MAYBE WE'LL NEED TO DO THE isSignedIn FUNCTION
 // if (auth2.isSignedIn.get()) {

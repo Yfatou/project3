@@ -1,31 +1,14 @@
-// import React from "react";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Landing from "./pages/Landing";
-// import UserInfos from "./pages/UserInfos";
-// import Detail from "./pages/Detail";
-// import NoMatch from "./pages/NoMatch";
-// import Nav from "./components/Nav";
-
-// function App() {
-//   return (
-//     <Router>
-//       <div>
-//         <Nav />
-//         <Switch>
-//           <Route exact path="/" component={Landing} />
-//           <Route exact path="/Account" component={UserInfos} />
-//           <Route exact path="/books" component={Landing} />
-//           <Route exact path="/books/:id" component={Detail} />
-//           <Route component={NoMatch} />
-//         </Switch>
-//       </div>
-//     </Router>
-//   );
-// }
-
 import React, { Component } from 'react';
 // import './App.css';
 import GoogleLogin from 'react-google-login';
+// import { GoogleLogout } from 'react-google-login';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Landing from "./pages/Landing";
+import FormServiceRequest from "./pages/FormServiceRequest";
+import FormSearchOpportunity from "./pages/FormSearchOpportunity";
+import ChooseOptions from "./pages/ChooseOptions";
+import NoMatch from "./pages/NoMatch";
+import Nav from "./components/Nav";
 
 class App extends Component {
 
@@ -36,41 +19,29 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <h1>LOGIN WITH GOOGLE</h1>
-
-      <GoogleLogin
-        clientId="702002442826-lnucl09e0ce578hh3n320kj3156ptdjp.apps.googleusercontent.com"
-        buttonText="LOGIN WITH GOOGLE"
-        onSuccess={responseGoogle}
-        onFailure={responseGoogle}
-      />
-
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Landing from "./pages/Landing";
-import FormServiceRequest from "./pages/FormServiceRequest";
-import FormSearchOpportunity from "./pages/FormSearchOpportunity";
-import ChooseOptions from "./pages/ChooseOptions";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
-
-function App() {
-  return (
-    <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/services" component={FormServiceRequest} />
-          <Route exact path="/searches" component={FormSearchOpportunity} />
-          <Route exact path="/options" component={ChooseOptions} />
-          <Route exact path="/landing" component={Landing} />
-          <Route component={NoMatch} />
-        </Switch>
-      </div>
-    );
+        <Router>
+          <div>
+            <Nav />
+            <GoogleLogin
+              // clientId="702002442826-lnucl09e0ce578hh3n320kj3156ptdjp.apps.googleusercontent.com"
+              clientId="601157754613-0js8ncq3uld0pj9gp3vtf1insj3lacu4.apps.googleusercontent.com"
+              buttonText="LOGIN WITH GOOGLE"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+            />
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/services" component={FormServiceRequest} />
+              <Route exact path="/searches" component={FormSearchOpportunity} />
+              <Route exact path="/options" component={ChooseOptions} />
+              <Route exact path="/landing" component={Landing} />
+              <Route component={NoMatch} />
+            </Switch>
+          </div>
+        </Router>
+    )
   }
-}
+};
+
 
 export default App;
