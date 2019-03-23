@@ -1,7 +1,10 @@
 import React, {Component} from "react";
 import Jumbotron from "../components/Jumbotron";
 // import SignUpBtn from "../components/SignUpBtn";
+<<<<<<< HEAD
 // import {Redirect} from 'react-router-dom';
+=======
+>>>>>>> master
 import Footer from "../components/Footer"
 
 
