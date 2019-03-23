@@ -16,7 +16,7 @@ class UserInfos extends Component {
         zip: ""
       };
 
-
+      
 
     // signup(res, type) {
     //     let postData;
@@ -66,21 +66,26 @@ class UserInfos extends Component {
         });
     };
 
+   
+
     render(){
   
-        const responseGoogle = (response) => {
-            console.log("google console");
-            console.log(response);
-            console.log(response.w3.ofa);
-            console.log(response.w3.wea);
-            console.log(response.w3.U3);
+        // const responseGoogle = (response) => {
+        //     console.log("google console");
+        //     console.log(response);
+        //     this.setState.first_name = response.w3.ofa
+        //     let first_name = response.w3.ofa;
+        //     let last_name = response.w3.wea;
+        //     console.log(response.w3.ofa);
+        //     console.log(response.w3.wea);
+        //     console.log(response.w3.U3);
             
-            // user = {
-            //     first_name: response.w3.ofa,
-            //     last_name: response.w3.wea,
-            //     email: response.w3.U3
-            // }
-        }
+        //     // user = {
+        //     //     first_name: response.w3.ofa,
+        //     //     last_name: response.w3.wea,
+        //     //     email: response.w3.U3
+        //     // }
+        // }
 
         // const logout = (response) => {
         //     console.log("google console");
@@ -89,13 +94,13 @@ class UserInfos extends Component {
         return(
             <div>
                 <Jumbotron>SeniorNextDoor</Jumbotron>
-                <GoogleLogin
+                {/* <GoogleLogin
                     // clientId="702002442826-lnucl09e0ce578hh3n320kj3156ptdjp.apps.googleusercontent.com"
                     clientId="601157754613-0js8ncq3uld0pj9gp3vtf1insj3lacu4.apps.googleusercontent.com"
                     buttonText="Login with Google"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle}
-                />
+                /> */}
                 <Footer />
             </div>
         );

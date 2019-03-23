@@ -19,8 +19,8 @@ class App extends Component {
           <div>
             <Nav />
             <Switch>
-              {/* <Route exact path="/" component={Landing} /> */}
-              <Route exact path="/" component={UserInfos} />
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/UserInfos" component={UserInfos} />
               <Route exact path="/services" component={FormServiceRequest} />
               <Route exact path="/searches" component={FormSearchOpportunity} />
               <Route exact path="/options" component={ChooseOptions} />
