@@ -2,11 +2,7 @@ import React from "react";
 import "./style.css";
 import SignUpBtn from "../SignUpBtn"
 
-<<<<<<< HEAD
 function Jumbotron() {
-=======
-const Jumbotron = ({ children }) => {
->>>>>>> master
     return (
         <div className="jumbotron">
             <div className="mx-auto">
