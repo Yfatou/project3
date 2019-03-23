@@ -1,59 +1,84 @@
 import React, {Component} from "react";
-// import Jumbotron from "../components/Jumbotron";
-import Footer from "../components/Footer";
-import Form from "../components/Form";
+import Jumbotron from "../components/Jumbotron";
+// import SignUpBtn from "../components/SignUpBtn";
+import GoogleLogin from "react-google-login";
+import { GoogleLogout } from 'react-google-login';
+// import {Redirect} from "react-router-dom";
+// import {PostData} from "../services/PostData";
+import Footer from "../components/Footer"
 
 
-const GOOGLE_BUTTON_ID = 'google-sign-in-button';
+class Landing extends Component {
 
-class UserInfos extends Component {
-  componentDidMount() {
-    window.gapi.signin2.render(
-      GOOGLE_BUTTON_ID,
-      {
-        width: 200,
-        height: 50,
-        onsuccess: this.onSuccess,
-      },
-    );
-  }
+    state = {
+        services: [],
+        email: "",
+        name: "",
+        zip: ""
+      };
 
-  onSuccess(googleUser) {
-    const profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId());
-    const userId = profile.getId;
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         loginError: false,
+    //         redirect: false
+    //     };
+    //     this.signup = this.signup.bind(this);
+    // }
 
-    console.log("Name: " + profile.getName());
-    const userName = profile.getName;
+    // signup(res, type) {
+    //     let postData;
+    //     if (type === 'google' && res.w3.U3) {
+    //         postData = {
+    //             name: res.w3.ig,
+    //             provider: type,
+    //             email: res.w3.U3,
+    //             provider_id: res.El,
+    //             token: res.Zi.access_token,
+    //             provider_pic: res.w3.Paa
+    //         };
+    //     }
 
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail());
-    const userEmail = profile.getEmail;
+    //     if (postData) {
+    //         PostData('signup', postData).then((result) => {
+    //            let responseJson = result;
+    //            sessionStorage.setItem("userData", JSON.stringify(responseJson));
+    //            this.setState({redirect: true});
+    //         });
+    //     } else {}
+    // }
 
-  }
-//   render() {
-//     return (
-//         <div>
-//             <div id={GOOGLE_BUTTON_ID}/>
-//             <form>
-//                 <Input
-//                     value ="userName"
+    render(){
+        // if (this.state.redirect || sessionStorage.getItem('userData')) {
+        //     return (<Redirect to={'/home'}/>)
+        // }
+        const responseGoogle = (response) => {
+            console.log("google console");
+            console.log(response);
+        }
+        const logout = (response) => {
+            console.log("google console");
+            console.log(response);
+        }
+        return(
+        <div>
+            <Jumbotron>SeniorNextDoor</Jumbotron>
+            <GoogleLogin
+                // clientId="702002442826-lnucl09e0ce578hh3n320kj3156ptdjp.apps.googleusercontent.com"
+                clientId="601157754613-0js8ncq3uld0pj9gp3vtf1insj3lacu4.apps.googleusercontent.com"
+                buttonText="Login with Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+            />
+            <GoogleLogout
+                buttonText="Logout"
+                onLogoutSuccess={logout}
+            >
+            </GoogleLogout>
+            <Footer />
+        </div>
+        );
+    }
+};
 
-
-//             </form>
-//             <Footer />
-//         </div>
-//     );
-  };
-
-// IF THE USER RETRIEVE THE INFORMATIONS AFTER, MAYBE WE'LL NEED TO DO THE isSignedIn FUNCTION
-// if (auth2.isSignedIn.get()) {
-//     var profile = auth2.currentUser.get().getBasicProfile();
-//     console.log('ID: ' + profile.getId());
-//     console.log('Name: ' + profile.getName());
-//     console.log('Image URL: ' + profile.getImageUrl());
-//     console.log('Email: ' + profile.getEmail());
-//   }
-
-
-export default UserInfos;
+export default Landing;
