@@ -1,13 +1,14 @@
 import React, {Component} from "react";
 import Jumbotron from "../components/Jumbotron";
-// import SignUpBtn from "../components/SignUpBtn";
 import Footer from "../components/Footer"
+import Banner from "../components/Banner"
 
 class Landing extends Component {
     render(){
         return(
         <div>
-            <Jumbotron>SeniorNextDoor</Jumbotron>
+            <Banner></Banner>
+            <Jumbotron></Jumbotron>
             <Footer />
         </div>
         );
