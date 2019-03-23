@@ -1,6 +1,13 @@
 import React from "react";
+import { GoogleLogout } from 'react-google-login';
 
 const Nav = () => {
+
+  const logout = (response) => {
+    console.log("google console");
+    console.log(response);
+  }
+
   return (
 
     <nav>
@@ -13,10 +20,15 @@ const Nav = () => {
           <li><a href="/landing">Home</a></li>
           <li><a href="badges.html">Components</a></li>
           <li><a href="collapsible.html">JavaScript</a></li>
+          <GoogleLogout
+                buttonText="Logout"
+                onLogoutSuccess={logout}
+            >
+            </GoogleLogout>
         </ul>
       </div>
     </nav>
   );
-}
+} 
 
 export default Nav;

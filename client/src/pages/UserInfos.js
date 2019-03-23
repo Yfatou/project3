@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import Jumbotron from "../components/Jumbotron";
 // import SignUpBtn from "../components/SignUpBtn";
 import GoogleLogin from "react-google-login";
-import { GoogleLogout } from 'react-google-login';
+// import { GoogleLogout } from 'react-google-login';
 // import {Redirect} from "react-router-dom";
 // import {PostData} from "../services/PostData";
 import Footer from "../components/Footer"
@@ -56,10 +56,10 @@ class Landing extends Component {
             console.log("google console");
             console.log(response);
         }
-        const logout = (response) => {
-            console.log("google console");
-            console.log(response);
-        }
+        // const logout = (response) => {
+        //     console.log("google console");
+        //     console.log(response);
+        // }
         return(
         <div>
             <Jumbotron>SeniorNextDoor</Jumbotron>
@@ -70,11 +70,11 @@ class Landing extends Component {
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
             />
-            <GoogleLogout
+            {/* <GoogleLogout
                 buttonText="Logout"
                 onLogoutSuccess={logout}
             >
-            </GoogleLogout>
+            </GoogleLogout> */}
             <Footer />
         </div>
         );
