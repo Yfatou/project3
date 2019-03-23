@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-// import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-// import { List, ListItem } from "../components/List";
+// import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import Card from "../components/Card";
 
 
 class FormServiceRequest  extends Component {
@@ -46,6 +43,7 @@ class FormServiceRequest  extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    // alert("Hello from handleFormSubmit");
     if (this.state.title && this.state.zip) {
       API.saveService({
         title: this.state.title,
@@ -61,18 +59,24 @@ class FormServiceRequest  extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>What Service Would You Like to Request For?</h1>
-            </Jumbotron>
-            <form>
+      <div>
+    
+      {/* <Container fluid > */}
+        {/* <Row> */}
+          {/* <Col size="md-12"> */}
+            <Card>
+              <div className="cardHeader title" >
+              <h1 >What Assistance Would You Like To Request For?</h1>
+              </div>
+           <div className="cardBody">
+
+           
+            <form >
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Service Title (required)"
+                placeholder="Assistance Needed (required)"
               />
               <Input
                 value={this.state.zip}
@@ -90,7 +94,7 @@ class FormServiceRequest  extends Component {
                 value={this.state.time}
                 onChange={this.handleInputChange}
                 name="time"
-                placeholder="Time (required)"
+                placeholder="Time (Optional)"
               />
               <TextArea
                 value={this.state.notes}
@@ -98,17 +102,17 @@ class FormServiceRequest  extends Component {
                 name="notes"
                 placeholder="Notes (Optional)"
               />
-              <FormBtn
+              <FormBtn 
                 disabled={!(this.state.zip && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Service Request
+                Submit Assistance Request
               </FormBtn>
+             
             </form>
-          </Col>
-         
-        </Row>
-      </Container>
+            </div>
+            </Card>
+      </div>
     );
   }
 }
