@@ -16,7 +16,8 @@ export function ServiceListItem({
   zip,
   time,
   date,
-  notes
+  notes,
+  available
  
 }) {
   return (
@@ -27,12 +28,15 @@ export function ServiceListItem({
             {/* <Thumbnail src={image} /> */}
           </Col>
           <Col size="xs-8 sm-9">
-            <h3>{title}</h3>
+            <p>Service:{title}</p>
+            <p> Zip: {zip}</p>
             <p> Notes: { notes}</p>
-            {/* <a rel="noreferrer noopener" target="_blank" href={link}>
+            <p> Time: {time}</p>
+            <p> Date: { date}</p>
+            {/* <a rel="noreferrer noopener" target="_blank" href= {available}>
               Go to the Contact info!
             </a> */}
-            <button>Availabe?</button>
+            <button> Available?</button>
           </Col>
         </Row>
       </Container>
