@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
+// import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
 
@@ -59,21 +59,24 @@ class FormServiceRequest  extends Component {
 
   render() {
     return (
-      <div id = "cardBody" >
-
+      <div>
     
-      <Container fluid >
-        <Row>
-          <Col size="md-12">
+      {/* <Container fluid > */}
+        {/* <Row> */}
+          {/* <Col size="md-12"> */}
             <Card>
-              <h1>What Service Would You Like to Request For?</h1>
+              <div className="cardHeader title" >
+              <h1 >What Assistance Would You Like To Request For?</h1>
+              </div>
+           <div className="cardBody">
+
            
-            <form>
+            <form >
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Service Title (required)"
+                placeholder="Assistance Needed (required)"
               />
               <Input
                 value={this.state.zip}
@@ -99,18 +102,16 @@ class FormServiceRequest  extends Component {
                 name="notes"
                 placeholder="Notes (Optional)"
               />
-              <FormBtn
+              <FormBtn 
                 disabled={!(this.state.zip && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Service Request
+                Submit Assistance Request
               </FormBtn>
+             
             </form>
+            </div>
             </Card>
-          </Col>
-         
-        </Row>
-      </Container>
       </div>
     );
   }
