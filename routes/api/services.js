@@ -2,7 +2,7 @@ const router = require("express").Router();
 const servicesController = require("../../controllers/servicesController");
 
 // Matches with "/api/services"
-router.route("/services")
+router.route("/")
   .get(servicesController.findAll)
   .post(servicesController.create);
 

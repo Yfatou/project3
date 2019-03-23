@@ -6,7 +6,7 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import DeleteBtn from "../components/DeleteBtn";
+// import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 import {ServiceList, ServiceListItem } from "../components/ServiceList";
 import { Container, Row, Col } from "../components/Grid";
@@ -27,12 +27,14 @@ class FormSearchOpportunity extends Component {
 
     this.setState({
       //[name] = "inputSearch"
-      [name]: value
+      [name]: value,
     });
   };
 
+  
+
   handleFormSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    // When the form is submitted, prevent its default behavior, get service update the services state
     event.preventDefault();
     API.getServices(this.state.inputSearch)
       .then(res => this.setState({ services: res.data }))
@@ -54,7 +56,7 @@ class FormSearchOpportunity extends Component {
                         name="inputSearch"
                         value={this.state.inputSearch}
                         onChange={this.handleInputChange}
-                        placeholder="Search Volunteer Opportunities"
+                        placeholder="Zip..."
                       />
                     </Col>
                     <Col size="xs-3 sm-2">
@@ -63,7 +65,7 @@ class FormSearchOpportunity extends Component {
                         type="success"
                         className="input-lg"
                       >
-                        Search Volunteer Opportunities
+                        Search for Volunteer Opportunities
                       </Button>
                     </Col>
                   </Row>
@@ -80,18 +82,21 @@ class FormSearchOpportunity extends Component {
               ) : (
                 <ServiceList>
                {this.state.services.map(service => (
-                  <ServiceListItem key={service._id}>
-                    {/* <Link to={"/services/" + service._id}> */}
-                     <strong>
-                       Service: {service.title} 
-                       Zip: {service.zip}
-                       Date: {service.data} 
-                       Time: {service.time} 
-                       <button>Available{service.available }</button>
-                     </strong>
-                   {/* </Link> */}
-                   <DeleteBtn onClick={() => this.deleteService(service._id)} />
-                 </ServiceListItem>
+                  <ServiceListItem 
+                    // {/* <Link to={"/services/" + service._id}> */}
+                    //  <strong>
+                      key={service._id}
+                       title={service.title} 
+                       zip={service.zip}
+                       date={service.date} 
+                       notes= {service.notes}
+                       time= {service.time} 
+                      //  <button>Available{service.available }</button>
+                    //  </strong>
+                  //  {/* </Link> */}
+                  //  <DeleteBtn onClick={() => this.deleteService(service._id)} />
+                   
+                  />
               ))}
             </ServiceList>
               )}
