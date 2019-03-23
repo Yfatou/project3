@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./pages/Landing";
-import Detail from "./pages/Detail";
+import FormServiceRequest from "./pages/FormServiceRequest";
+import FormSearchOpportunity from "./pages/FormSearchOpportunity";
+import ChooseOptions from "./pages/ChooseOptions";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 
@@ -12,8 +14,10 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route exact path="/books" component={Landing} />
-          <Route exact path="/books/:id" component={Detail} />
+          <Route exact path="/services" component={FormServiceRequest} />
+          <Route exact path="/searches" component={FormSearchOpportunity} />
+          <Route exact path="/options" component={ChooseOptions} />
+          <Route exact path="/landing" component={Landing} />
           <Route component={NoMatch} />
         </Switch>
       </div>
