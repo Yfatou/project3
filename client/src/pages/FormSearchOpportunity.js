@@ -15,7 +15,8 @@ class FormSearchOpportunity extends Component {
   state = {
     services: [],
     inputSearch: "",
-    available: false
+    available: false,
+    zip: ""
   };
 
   handleInputChange = event => {
@@ -23,7 +24,11 @@ class FormSearchOpportunity extends Component {
     // Update the appropriate state
     // const { name, value } = event.target; 
     const name=event.target.name;
-    const value=event.target.value;
+    let value=event.target.value;
+
+    // if(name==="zip"){
+    //   value = value.services;
+    // }
 
     this.setState({
       //[name] = "inputSearch"
@@ -36,6 +41,9 @@ class FormSearchOpportunity extends Component {
   handleFormSubmit = event => {
     // When the form is submitted, prevent its default behavior, get service update the services state
     event.preventDefault();
+    // if (!this.state.zip) {
+    //   alert ("Please enter the Zip")
+    // }
     API.getServices(this.state.inputSearch)
       .then(res => this.setState({ services: res.data }))
       .catch(err => console.log(err));
@@ -110,6 +118,115 @@ class FormSearchOpportunity extends Component {
 
 export default FormSearchOpportunity;
 
+
+
+// import React from "react";
+// import "./style.css";
+
+// // Using the datalist element we can create autofill suggestions based on the props.breeds array
+// function SearchForm(props) {
+//   return (
+//     <form className="search">
+//       <div className="form-group">
+//         <label htmlFor="breed">Zip Code:</label>
+//         <input
+//           value={props.search}
+//           onChange={props.handleInputChange}
+//           name="zip"
+//           list="codes"
+//           type="integer"
+//           className="form-control"
+//           placeholder="Type in a zip code to begin with!"
+//           id="breed"
+//         />
+//         <datalist id="zipcodes">
+//           {props.zipcodes.map(zip => (
+//             <option value={zip} key={zip} />
+//           ))}
+//         </datalist>
+//         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
+//           Search
+//         </button>
+//       </div>
+//     </form>
+//   );
+// }
+
+// export default SearchForm;
+
+// form.search {
+//   overflow: auto;
+//   margin-bottom: 10px;
+// }
+
+// form.search button[type="submit"] {
+//   float: right;
+//   margin-top: 10px;
+// }
+
+
+// SEARCH
+// import React, { Component } from "react";
+// import API from "../utils/API";
+// import Container from "../components/Container";
+// import SearchForm from "../components/SearchForm";
+// import SearchResults from "../components/SearchResults";
+// import Alert from "../components/Alert";
+
+// class Search extends Component {
+//   state = {
+//     search: "",
+//     breeds: [],
+//     results: [],
+//     error: ""
+//   };
+
+//   // When the component mounts, get a list of all available base breeds and update this.state.breeds
+//   componentDidMount() {
+//     API.getBaseBreedsList()
+//       .then(res => this.setState({ breeds: res.data.message }))
+//       .catch(err => console.log(err));
+//   }
+
+//   handleInputChange = event => {
+//     this.setState({ search: event.target.value });
+//   };
+
+//   handleFormSubmit = event => {
+//     event.preventDefault();
+//     API.getDogsOfBreed(this.state.search)
+//       .then(res => {
+//         if (res.data.status === "error") {
+//           throw new Error(res.data.message);
+//         }
+//         this.setState({ results: res.data.message, error: "" });
+//       })
+//       .catch(err => this.setState({ error: err.message }));
+//   };
+//   render() {
+//     return (
+//       <div>
+//         <Container style={{ minHeight: "80%" }}>
+//           <h1 className="text-center">Search By Breed!</h1>
+//           <Alert
+//             type="danger"
+//             style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
+//           >
+//             {this.state.error}
+//           </Alert>
+//           <SearchForm
+//             handleFormSubmit={this.handleFormSubmit}
+//             handleInputChange={this.handleInputChange}
+//             breeds={this.state.breeds}
+//           />
+//           <SearchResults results={this.state.results} />
+//         </Container>
+//       </div>
+//     );
+//   }
+// }
+
+// export default Search;
 
 
 

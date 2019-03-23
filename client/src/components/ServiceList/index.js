@@ -29,8 +29,8 @@ export function ServiceListItem({
           </Col>
           <Col size="xs-8 sm-9">
             <p>Service:{title}</p>
-            <p> Notes: { notes}</p>
             <p> Zip: {zip}</p>
+            <p> Notes: { notes}</p>
             <p> Time: {time}</p>
             <p> Date: { date}</p>
             {/* <a rel="noreferrer noopener" target="_blank" href= {available}>
