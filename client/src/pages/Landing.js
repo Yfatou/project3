@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Jumbotron from "../components/Jumbotron";
-import SignUpBtn from "../components/SignUpBtn";
+// import SignUpBtn from "../components/SignUpBtn";
 import Footer from "../components/Footer"
 
 class Landing extends Component {
