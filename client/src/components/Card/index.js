@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Card({ children }) {
+const Card = ({ children }) => {
     return (
         <div className="card">
             {children}
