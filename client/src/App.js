@@ -6,12 +6,18 @@ import FormSearchOpportunity from "./pages/FormSearchOpportunity";
 import ChooseOptions from "./pages/ChooseOptions";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Calendar from "./components/Calendar";
+
+
+
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Nav/>
+        <Calendar />
+    
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/services" component={FormServiceRequest} />
@@ -20,9 +26,11 @@ function App() {
           <Route exact path="/landing" component={Landing} />
           <Route component={NoMatch} />
         </Switch>
+        
       </div>
     </Router>
   );
 }
+
 
 export default App;

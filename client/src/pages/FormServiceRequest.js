@@ -5,6 +5,8 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
 
 
+
+
 class FormServiceRequest  extends Component {
   state = {
     services: [],
@@ -23,7 +25,7 @@ class FormServiceRequest  extends Component {
   loadServices = () => {
     API.getServices()
       .then(res =>
-        this.setState({ services: res.data, title: "", time:"", zip: "", notes: "", data: "", available:"" })
+        this.setState({ services: res.data, title: "", time:"", zip: "", notes: "", data: "", available:""})
       )
       .catch(err => console.log(err));
   };
@@ -84,17 +86,20 @@ class FormServiceRequest  extends Component {
                 name="zip"
                 placeholder="Zip (required)"
               />
-               <Input
+               <input
+            
                 value={this.state.date}
                 onChange={this.handleInputChange}
                 name="date"
                 placeholder="Date (required)"
               />
                <Input
+              
                 value={this.state.time}
                 onChange={this.handleInputChange}
                 name="time"
                 placeholder="Time (Optional)"
+                
               />
               <TextArea
                 value={this.state.notes}
