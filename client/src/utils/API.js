@@ -6,8 +6,8 @@ export default {
     return axios.get("/api/services");
   },
   // Gets the service with the given id
-  getTheServices: function(id) {
-    return axios.get("/api/services/" + id);
+  getTheServices: function(query) {
+    return axios.get("/api/services/" + query);
   },
   // Deletes the service with the given id
   deleteService: function(id) {
