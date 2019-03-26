@@ -3,6 +3,7 @@ import API from "../utils/API";
 // import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
+import Calendar from 'react-calendar';
 
 
 
@@ -14,7 +15,7 @@ class FormServiceRequest  extends Component {
     time: "",
     zip: "",
     notes: "",
-    date: "",
+    date:new Date(),
     available: false
   };
 
@@ -25,7 +26,7 @@ class FormServiceRequest  extends Component {
   loadServices = () => {
     API.getServices()
       .then(res =>
-        this.setState({ services: res.data, title: "", time:"", zip: "", notes: "", data: "", available:""})
+        this.setState({ services: res.data, title: "", time:"", zip: "", notes: "", date: "", available:""})
       )
       .catch(err => console.log(err));
   };
@@ -38,10 +39,12 @@ class FormServiceRequest  extends Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
+    this.setState({[name]: value});
   };
+
+  handleInputChange = date => {
+    
+    this.setState({ date })}
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -86,13 +89,38 @@ class FormServiceRequest  extends Component {
                 name="zip"
                 placeholder="Zip (required)"
               />
-               <input
-            
+
+               {/* <Input 
+               value={this.state.date}
+               onChange={this.onChange}
+               name="date"
+               placeholder="Date (required)"
+
+               /> */}
+
+<div>
+        <Calendar
+          onChange={this.onChange}
+          value={this.state.date}
+          name ="date"
+          placeholder ="Date(required)"
+        />
+      </div>
+
+               
+{/* 
+              <Calendar> */}
+               <Input
+              
                 value={this.state.date}
-                onChange={this.handleInputChange}
+                onClick={this.onChange}
                 name="date"
                 placeholder="Date (required)"
-              />
+
+                />
+
+                {/* </Calendar> */}
+
                <Input
               
                 value={this.state.time}
@@ -107,6 +135,7 @@ class FormServiceRequest  extends Component {
                 name="notes"
                 placeholder="Notes (Optional)"
               />
+              
               <FormBtn 
                 disabled={!(this.state.zip && this.state.title)}
                 onClick={this.handleFormSubmit}
