@@ -8,15 +8,19 @@ import Footer from "../components/Footer"
 class Landing extends Component {
 
     render(){
+        let firstname = "";
+        let lastname = "";
 
         const responseGoogle = (response) => {
             console.log("google console");
             console.log(response);
-            // let first_name = response.w3.ofa;
-            // let last_name = response.w3.wea;
-            console.log(response.w3.ofa);
-            console.log(response.w3.wea);
-            console.log(response.w3.U3);
+            firstname = response.w3.ofa;
+            lastname = response.w3.wea;
+            // console.log(response.w3.ofa);
+            // console.log(response.w3.wea);
+            // console.log(response.w3.U3);
+            console.log(firstname);
+            console.log(lastname);
         }
 
         return(
