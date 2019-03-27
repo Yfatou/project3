@@ -3,12 +3,19 @@
   background-repeat: no-repeat;
 }
 
+img {
+  height: auto;
+  width: auto;
+}
 .cardBody {
   background: white;
   margin: 3%;
 }
 
-
+.userPic {
+  height: 200px;
+  width: 200px;
+}
 .card {
   border-radius: 5%;
   height: 25%;

@@ -1,7 +1,5 @@
 import React, {Component} from "react";
-import Jumbotron from "../components/Jumbotron";
-// import Nav from "../components/Nav";
-// import SignUpBtn from "../components/SignUpBtn";
+// import Jumbotron from "../components/Jumbotron";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import Footer from "../components/Footer";
@@ -21,6 +19,12 @@ class Landing extends Component {
     googleResponse = (response) => {
         console.log(response);
         let Gname = response.profileObj.givenName;
+
+        sessionStorage.setItem("userFirstName", response.profileObj.givenName);
+        sessionStorage.setItem("userLastName", response.profileObj.familyName);
+        sessionStorage.setItem("userEmail", response.profileObj.email);
+        sessionStorage.setItem("googleId", response.profileObj.googleId);
+        sessionStorage.setItem("userPic", response.profileObj.imageUrl);
         this.setState({isAuthenticated: true, token: '', user: null , name: Gname})
     };
     
