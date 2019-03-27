@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import OptionCard from '../components/OptionCard';
 
 
 export class ChooseOptions extends Component {
@@ -9,14 +10,17 @@ export class ChooseOptions extends Component {
                     <div className="col-md-2">
                         {/* empty */}
                     </div>
-
-                    <a href="/searches" className="col-md-3 card">
+                    <OptionCard>
+                    <a href="/searches" className="col-md-12 center cardHeader">
                         <h3>Find A Volunteer Opportunity</h3>
                     </a>
+                    </OptionCard>
 
-                    <a href="/services" className="col-md-3 card">
+                    <OptionCard>
+                    <a href="/services" className="col-md-12 center cardHeader">
                         <h3>Post a Service Request</h3>
                     </a>
+                    </OptionCard>
 
                     <div className="col-md-2">
                         {/* empty */}

@@ -11,7 +11,7 @@ export function List({ children }) {
   );
 }
 //passing the props object in as an argument. This case the props object gets destructed into the
-//actually name of the attributes from FormSearchOpportunity.js-> <list> 
+//actual name of the attributes from FormSearchOpportunity.js-> <list> 
 export function ListItem({ 
   key,  
   title,

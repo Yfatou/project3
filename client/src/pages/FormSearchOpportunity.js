@@ -94,9 +94,7 @@ class FormSearchOpportunity extends Component {
     );
   }
 }
-// 7. copying App.js from activity 8. User Interface for search page.
-// make sure all the components match
-// 8. go to App.js in the main folder and add the route for this Google page.
+
 export default FormSearchOpportunity;
 
 

@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 
 const Footer = () => {
@@ -7,21 +8,16 @@ const Footer = () => {
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
-                        <h5 class="white-text">Final Project</h5>
+                        <p class="white-text">© 2019 Copyright</p>
                     </div>
                     <div class="col l4 offset-l2 s12">
                        
                         <ul>
-                            <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                            <li></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2019 Copyright Text
-          
                 </div>
             </div>
         </footer>
