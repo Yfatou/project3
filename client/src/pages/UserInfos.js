@@ -55,7 +55,7 @@ class UserInfos extends Component {
                     {/* <div className="cardHeader title" > */}
                     <div className="card flex-row flex-wrap cardHeader">
                         <div className="card-header border-0 userPic">
-                            <img src={this.state.image} alt="" />
+                            <img src={this.state.image} alt="" className="center" />
                         </div>
                         <div className="card-block px-6">
                             <h1 className="card-title title">Welcome {this.state.firstname} </h1>
