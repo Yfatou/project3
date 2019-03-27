@@ -8,83 +8,26 @@ import FormSearchOpportunity from "./pages/FormSearchOpportunity";
 import ChooseOptions from "./pages/ChooseOptions";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import { GoogleLogin } from "react-google-login";
-
-class App extends Component {
-
-  constructor() {
-    super();
-    this.state = { isAuthenticated: false, user: null, token: "", name: ""};
-  }
-
-  logout = () => {
-    this.setState({isAuthenticated: false, token: '', user: null})
-  };
-
-  googleResponse = (response) => {
-    console.log(response);
-    // console.log(response.profileObj.givenName);
-    let Gname = response.profileObj.givenName;
-    console.log("name: " + Gname);
-    this.setState({isAuthenticated: false, token: '', user: null , name: Gname})
-  };
 
 
-  onFailure = (error) => {
-    alert(error);
-  }
-
-  render() {
-console.log(this.state, "Gname in")
-    let content = !!this.state.isAuthenticated ?
-      (
-        <div>
-          <p>Authenticated</p>
-            <div>
-              {this.state.user.email}
-            </div>
-            <div>
-              <button onClick={this.logout} className="button">Log out</button>
-            </div>
-        </div>
-      ) : 
-      (
-        <div>
-          <GoogleLogin
-            clientId="601157754613-0js8ncq3uld0pj9gp3vtf1insj3lacu4.apps.googleusercontent.com"
-            buttonText="Login"
-            onSuccess={this.googleResponse}
-            onFailure={this.onFailure}
-          />
-        </div>
-      );
-
-      
-    return (
-      
-        <Router>
-          <div>
-            
-            <Nav 
-            />
-            {content}
-            {/* <Switch>
-              <Route exact path="/" component={Landing} />
-              <Route exact path="/UserInfos" component={UserInfos} />
-              <Route exact path="/services" component={FormServiceRequest} />
-              <Route exact path="/searches" component={FormSearchOpportunity} />
-              <Route exact path="/options" component={ChooseOptions} />
-              <Route exact path="/landing" component={Landing} />
-              <Route component={NoMatch} />
-            </Switch> */}
-
-            <h1> Welcome {this.state.Gname}</h1>
-            
-          </div>
-        </Router>
-    )
-  }
-};
+function App() {
+  return (
+    <Router>
+      <div>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/UserInfos" component={UserInfos} />
+          <Route exact path="/services" component={FormServiceRequest} />
+          <Route exact path="/searches" component={FormSearchOpportunity} />
+          <Route exact path="/options" component={ChooseOptions} />
+          <Route exact path="/landing" component={Landing} />
+          <Route component={NoMatch} />
+        </Switch>
+      </div>
+    </Router>
+  );
+}
 
 
 export default App;
