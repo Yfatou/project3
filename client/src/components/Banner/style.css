@@ -7,12 +7,11 @@
 .hero-image {
 /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
 background-image: url("./project32.png");
-background-color: #035499;
-
+background-color: #0b4170;
+border-radius: 5%;
 /* Set a specific height */
 height: 550px;
-margin-top: 0px;
-
+margin-top: 5%;
 /* Position and center the image to scale nicely on all screens */
 background-position: center;
 background-repeat: no-repeat;

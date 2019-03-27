@@ -1,4 +1,8 @@
-.mx-auto {
+/* .mx-auto {
     width: 1000px;
-}
+} */
 
+.jumbotron{
+    margin-top: 5%;
+    border-radius: 5%;
+}
