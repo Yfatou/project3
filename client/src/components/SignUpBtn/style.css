@@ -1,4 +1,5 @@
- #sign-btn {
-    float: center;
-    color: orangered;
-  }
+.btn-success {
+  color: #fff;
+  background-color: #eb5424;
+  border-color: #e14615;
+}
