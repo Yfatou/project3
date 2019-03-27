@@ -6,7 +6,7 @@ import FormSearchOpportunity from "./pages/FormSearchOpportunity";
 import ChooseOptions from "./pages/ChooseOptions";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import Calendar from "./components/Calendar";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -22,9 +22,9 @@ function App() {
           <Route exact path="/options" component={ChooseOptions} />
           <Route exact path="/landing" component={Landing} />
           <Route component={NoMatch} />
-          <Route component={Calendar} />
+          
         </Switch>
-        
+        <Footer />
       </div>
     </Router>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css"
 
-function Banner () {
+const Banner = () => {
     return (
         <div className="hero-image">
         </div>
