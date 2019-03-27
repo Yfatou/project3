@@ -14,7 +14,7 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = { isAuthenticated: false, user: null, token: ''};
+    this.state = { isAuthenticated: false, user: null, token: "", name: ""};
   }
 
   logout = () => {
@@ -23,6 +23,10 @@ class App extends Component {
 
   googleResponse = (response) => {
     console.log(response);
+    // console.log(response.profileObj.givenName);
+    let Gname = response.profileObj.givenName;
+    console.log("name: " + Gname);
+    this.setState({isAuthenticated: false, token: '', user: null , name: Gname})
   };
 
 
@@ -31,7 +35,7 @@ class App extends Component {
   }
 
   render() {
-
+console.log(this.state, "Gname in")
     let content = !!this.state.isAuthenticated ?
       (
         <div>
@@ -55,7 +59,7 @@ class App extends Component {
         </div>
       );
 
-
+      
     return (
       
         <Router>
@@ -73,6 +77,9 @@ class App extends Component {
               <Route exact path="/landing" component={Landing} />
               <Route component={NoMatch} />
             </Switch> */}
+
+            <h1> Welcome {this.state.Gname}</h1>
+            
           </div>
         </Router>
     )
