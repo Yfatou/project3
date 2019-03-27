@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.18.0",
+    "js-datepicker": "^4.0.10",
     "moment": "^2.24.0",
     "react": "^16.8.4",
     "react-calendar": "^2.18.1",

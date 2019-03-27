@@ -3,19 +3,19 @@ import API from "../utils/API";
 // import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
-import Calendar from 'react-calendar';
+
+// import Calendar from 'react-calendar';
 
 
 
-
-class FormServiceRequest  extends Component {
+class FormServiceRequest extends Component {
   state = {
     services: [],
     title: "",
     time: "",
     zip: "",
     notes: "",
-    date:new Date(),
+    date: new Date(),
     available: false
   };
 
@@ -26,7 +26,7 @@ class FormServiceRequest  extends Component {
   loadServices = () => {
     API.getServices()
       .then(res =>
-        this.setState({ services: res.data, title: "", time:"", zip: "", notes: "", date: "", available:""})
+        this.setState({ services: res.data, title: "", time: "", zip: "", notes: "", date: "", available: "" })
       )
       .catch(err => console.log(err));
   };
@@ -39,12 +39,13 @@ class FormServiceRequest  extends Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({[name]: value});
+    this.setState({ [name]: value });
   };
 
-  handleInputChange = date => {
-    
-    this.setState({ date })}
+  onClickCalander = date => {
+
+    this.setState({ date })
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -62,20 +63,22 @@ class FormServiceRequest  extends Component {
     }
   };
 
+
+
   render() {
     return (
       <div>
-    
-      {/* <Container fluid > */}
-        {/* <Row> */}
-          {/* <Col size="md-12"> */}
-            <Card>
-              <div className="cardHeader title" >
-              <h1 >What Assistance Would You Like To Request For?</h1>
-              </div>
-           <div className="cardBody">
 
-           
+        {/* <Container fluid > */}
+        {/* <Row> */}
+        {/* <Col size="md-12"> */}
+        <Card>
+          <div className="cardHeader title" >
+            <h1 >What Assistance Would You Like To Request For?</h1>
+          </div>
+          <div className="cardBody">
+
+
             <form >
               <Input
                 value={this.state.title}
@@ -90,44 +93,28 @@ class FormServiceRequest  extends Component {
                 placeholder="Zip (required)"
               />
 
-               {/* <Input 
-               value={this.state.date}
-               onChange={this.onChange}
-               name="date"
-               placeholder="Date (required)"
 
-               /> */}
 
-<div>
-        <Calendar
-          onChange={this.onChange}
-          value={this.state.date}
-          name ="date"
-          placeholder ="Date(required)"
-        />
-      </div>
-
-               
-{/* 
-              <Calendar> */}
-               <Input
-              
-                value={this.state.date}
-                onClick={this.onChange}
-                name="date"
-                placeholder="Date (required)"
+              <div>
+                <Input
+                  id="datepicker"
+                  value={this.state.date}
+                  name="date"
+                  placeholder="Date(required)"
 
                 />
+              </div>
 
-                {/* </Calendar> */}
 
-               <Input
-              
+
+
+              <Input
+
                 value={this.state.time}
                 onChange={this.handleInputChange}
                 name="time"
                 placeholder="Time (Optional)"
-                
+
               />
               <TextArea
                 value={this.state.notes}
@@ -135,17 +122,17 @@ class FormServiceRequest  extends Component {
                 name="notes"
                 placeholder="Notes (Optional)"
               />
-              
-              <FormBtn 
+
+              <FormBtn
                 disabled={!(this.state.zip && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Assistance Request
               </FormBtn>
-             
+
             </form>
-            </div>
-            </Card>
+          </div>
+        </Card>
       </div>
     );
   }

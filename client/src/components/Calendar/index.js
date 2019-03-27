@@ -7,6 +7,8 @@ class myApp extends Component {
     date: new Date(),
   }
 
+ 
+
   onChange = date => this.setState({ date })
 
   render() {
@@ -18,7 +20,6 @@ class myApp extends Component {
         />
       </div>
     );
-  }
 }
-
-export default myApp;
+}
+export default myApp
