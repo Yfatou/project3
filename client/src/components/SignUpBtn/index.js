@@ -1,8 +1,8 @@
 import React from "react";
-
+import "./style.css";
 const SignUpBtn = (props) => {
     return (
-        <div class="btn-large waves-effect waves-light btn-primary g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="btn-large waves-effect waves-light g-signin2" id= " btn-sign" data-onsuccess="onSignIn"></div>
     );
 }
 

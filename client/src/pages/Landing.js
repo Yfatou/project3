@@ -5,31 +5,33 @@ import Banner from "../components/Banner";
 class Landing extends Component {
     render() {
         return (
-            <div>
+            <body>
                 <div class="container-fluid" style={containerStyle}>
                     <div class="row">
                         <div class="col-md-1">
-                        {/* empty */}
+                            {/* empty */}
                         </div>
-                        <div class="col-md-5">
-                        <Banner></Banner>
+                        <div class="col-md-6">
+                            <Banner></Banner>
                         </div>
-                        <div class="col-md-5">
-                        <Jumbotron></Jumbotron>
+                        <div class="col-md-4">
+                            <Jumbotron></Jumbotron>
                         </div>
                         <div class="col-md-1">
-                        {/* empty */}
+                            {/* empty */}
                         </div>
                     </div>
                 </div>
-            </div>
+            </body>
         );
     }
 };
 
 var containerStyle = {
-    background: 'linear-gradient(to right, #1a242e, #2c3e50)'
-  };
+    background: 'linear-gradient(to left, #e67e22, #e74c3c)',
+     backgroundSize: 'cover'
+
+};
 
 
 export default Landing;
