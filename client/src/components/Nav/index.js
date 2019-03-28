@@ -3,7 +3,7 @@ import "./style.css";
 
 const Nav = () => {
   return (
-    <div class="navbar-fixed">
+    <div className="navbar-fixed">
     <nav>
       <div className="nav-wrapper">
         <a href="/" className="brand-logo" id="brand-logo1">SeniorNextDoor</a>
