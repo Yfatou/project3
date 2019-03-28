@@ -2,8 +2,19 @@ import React, {Component} from "react";
 // import Jumbotron from "../components/Jumbotron";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
+import API from "../../utils/API"
 
 class SignUpBtn extends Component {
+
+  state = {
+    name: "",
+  };
+
+  componentDidMount() {
+    this.googleResponse();
+  }
+
+
 
     constructor() {
         super();
@@ -16,6 +27,11 @@ class SignUpBtn extends Component {
     
     googleResponse = (response) => {
         console.log(response);
+        // work on grabbing API
+        API.saveGoogle({
+
+        })
+        // work on grabbing API
         let Gname = response.profileObj.givenName;
 
         sessionStorage.setItem("userFirstName", response.profileObj.givenName);
