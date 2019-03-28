@@ -12,6 +12,7 @@ const Nav = () => {
           <li><a href="/options">Choose-Options</a></li>
           <li><a href="/services">Service-Request-Form</a></li>
           <li><a href="/searches">Search-Opportunity-Form</a></li>
+          <li><a href="/send">Contact-Senior-Form</a></li>
         </ul>
       </div>
     </nav>
