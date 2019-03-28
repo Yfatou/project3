@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-// import Jumbotron from "../components/Jumbotron";
+import Jumbotron from "../components/Jumbotron";
+import Banner from "../components/Banner";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import Footer from "../components/Footer";
@@ -69,11 +70,36 @@ class Landing extends Component {
             <div>    
                 {content}
                 {WelcomeMsg}  
+                <body>
+                    <div className="container-fluid" style={containerStyle}>
+                        <div className="row">
+                            <div className="col-md-1">
+                                {/* empty */}
+                            </div>
+                            <div className="col-md-6">
+                                <Banner></Banner>
+                            </div>
+                            <div className="col-md-4">
+                                <Jumbotron></Jumbotron>
+                            </div>
+                            <div className="col-md-1">
+                                {/* empty */}
+                            </div>
+                        </div>
+                    </div>
+                </body>
                 <Footer />
             </div>
-        );
+        )
     }
 };
 
-export default Landing;
 
+var containerStyle = {
+    background: 'linear-gradient(to left, #e67e22, #e74c3c)',
+     backgroundSize: 'cover'
+
+};
+
+
+export default Landing;
