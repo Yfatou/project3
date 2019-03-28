@@ -10,10 +10,12 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 function App() {
+
+  
   return (
     <Router>
       <div>
-        <Nav />
+        <Nav/>
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/services" component={FormServiceRequest} />
@@ -22,11 +24,13 @@ function App() {
           <Route exact path="/landing" component={Landing} />
           <Route exact path="/send" component={ContactForm} />
           <Route component={NoMatch} />
+          
         </Switch>
         <Footer />
       </div>
     </Router>
   );
 }
+
 
 export default App;

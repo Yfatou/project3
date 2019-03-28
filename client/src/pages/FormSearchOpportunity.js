@@ -63,9 +63,9 @@ class FormSearchOpportunity extends Component {
                         title={data.title}
                         zip={data.zip}
                         date={data.date}
-                        notes={data.notes}
                         time={data.time}
-                        
+                        notes={data.notes}
+                     
                       >
                      
                       </ListItem>
