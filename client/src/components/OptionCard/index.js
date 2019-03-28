@@ -3,7 +3,7 @@ import "./style.css";
 
 const OptionCard = ({ children }) => {
     return (
-        <div className="card">
+        <div id="op-card" className="card-option">
             {children}
         </div>
     );

@@ -45,7 +45,14 @@ class FormServiceRequest extends Component {
   onClickCalander = date => {
 
     this.setState({ date })
-  }
+  };
+
+  onBlur = event => {
+    let { name, date } = event.target;
+    this.setState({ [name]: date});
+    console.log('blur event');
+  };
+
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -73,10 +80,10 @@ class FormServiceRequest extends Component {
         {/* <Row> */}
         {/* <Col size="md-12"> */}
         <Card>
-          <div className="cardHeader title" >
+          <div id="title1" className="cardHeader title" >
             <h1 >What Assistance Would You Like To Request For?</h1>
           </div>
-          <div className="cardBody">
+          <div id="card-body" className="cardBody">
 
 
             <form >
@@ -99,6 +106,7 @@ class FormServiceRequest extends Component {
                 <Input
                   id="datepicker"
                   value={this.state.date}
+                  onBlur={this.state.date}
                   name="date"
                   placeholder="Date(required)"
 
