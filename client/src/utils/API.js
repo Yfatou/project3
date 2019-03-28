@@ -16,5 +16,9 @@ export default {
   // Saves a service to the database
   saveService: function(serviceData) {
     return axios.post("/api/services", serviceData);
+  },
+  // Save Google profile information to the database
+  saveGoogle: function(googleData) {
+    return axios.post("/api/googlesignin", googleData);
   }
 };

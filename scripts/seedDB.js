@@ -21,7 +21,7 @@ const serviceSeed = [
 
     },
     {
-        
+
         title: "House Cleaning",
         time: "10:00 am",
         zip: "60025",
@@ -30,7 +30,7 @@ const serviceSeed = [
         date: new Date(Date.now())
     },
     {
-        
+
         title: "Walk the Dog",
         time: "11:00 am",
         zip: "60062",
@@ -39,7 +39,7 @@ const serviceSeed = [
         date: new Date(Date.now())
     },
     {
-        
+
         title: "Ride to the doctor's office.",
         time: "9:00 am",
         zip: "60076",
@@ -47,9 +47,9 @@ const serviceSeed = [
         available: false,
         date: new Date(Date.now())
     },
-    
+
     {
-       
+
         title: "Snow Shovel",
         time: "12:00 pm",
         zip: "60053",
@@ -59,9 +59,35 @@ const serviceSeed = [
     }
 ];
 
+const googleSeed = [
+    {
+        googleId: 1,
+        tokenId: 1,
+        email: "eileen.j.sul@gmail.com",
+        email_verified: true,
+        name: "Eileen",
+        picture: "eileen.jpg",
+        given_name: "Eileen",
+        family_name: "Sul",
+        locale: "en"
+    }
+];
+
 db.Service
-    .remove({})
-    .then(() => db.Service.collection.insertMany(serviceSeed))
+    // .remove({})
+    .collection.insertMany(serviceSeed)
+    .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
+
+db.Google
+    // .remove({})
+    .collection.insertOne(googleSeed)
     .then(data => {
         console.log(data.result.n + " records inserted!");
         process.exit(0);
