@@ -12,10 +12,12 @@ import Footer from "./components/Footer";
 
 
 function App() {
+
+  
   return (
     <Router>
       <div>
-        <Nav />
+        <Nav/>
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/UserInfos" component={UserInfos} />
@@ -24,6 +26,7 @@ function App() {
           <Route exact path="/options" component={ChooseOptions} />
           <Route exact path="/landing" component={Landing} />
           <Route component={NoMatch} />
+          
         </Switch>
         <Footer />
       </div>
