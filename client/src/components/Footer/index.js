@@ -5,7 +5,7 @@ import "./style.css";
 const Footer = () => {
     return (
         <footer class="page-footer">
-            <div class="container">
+            <div id="foot-container" class="container">
                 <div class="row">
                     <div class="col l6 s12">
                         <p class="white-text">© 2019 Copyright</p>
