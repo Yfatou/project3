@@ -75,7 +75,7 @@ const googleSeed = [
 
 db.Service
     .remove({})
-    .collection.insertMany(serviceSeed)
+    .then(() => db.Service.collection.insertMany(serviceSeed))
     .then(data => {
         console.log(data.result.n + " records inserted!");
         process.exit(0);
@@ -87,7 +87,7 @@ db.Service
 
 db.Google
     .remove({})
-    .collection.insertOne(googleSeed)
+    .then(() => db.Google.collection.insertMany(googleSeed))
     .then(data => {
         console.log(data.result.n + " records inserted!");
         process.exit(0);
@@ -96,3 +96,15 @@ db.Google
         console.error(err);
         process.exit(1);
     });
+
+// db.Google
+//     .remove({})
+//     .collection.insertMany(googleSeed)
+//     .then(data => {
+//         console.log(data.result.n + " records inserted!");
+//         process.exit(0);
+//     })
+//     .catch(err => {
+//         console.error(err);
+//         process.exit(1);
+//     });
