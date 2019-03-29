@@ -32,8 +32,30 @@ class SignUpBtn extends Component {
   };
 
   googleResponse = (response) => {
-    console.log(response);
-    // work on grabbing API
+    // console.log(response);
+    // // work on grabbing API
+
+    this.setState({ 
+      googleId: response.profileObj.googleId,
+      tokenId: response.tokenId,
+      email: response.profileObj.email,
+      name: response.profileObj.givenName,
+      picture: response.profileObj.imageUrl,
+      given_name: response.profileObj.givenName,
+      family_name: response.profileObj.familyName})
+
+    console.log(this.state.googleId);
+
+    API.saveGoogle({  
+          googleId: this.state.googleId,
+          tokenId: this.state.tokenId,
+          email: this.state.email,
+          name: this.state.name,
+          picture: this.state.picture,
+          given_name: this.state.given_name,
+          family_name: this.state.family_name
+    })
+    
 
     // work on grabbing API
     let Gname = response.profileObj.givenName;
@@ -44,21 +66,7 @@ class SignUpBtn extends Component {
     sessionStorage.setItem("googleId", response.profileObj.googleId);
     sessionStorage.setItem("userPic", response.profileObj.imageUrl);
     this.setState({ isAuthenticated: true, token: '', user: null, name: Gname })
-  
-    console.log(response.tokenId);
 
-    API.saveGoogle({
-      googleId: response.profileObj.googleId,
-      tokenId: response.tokenId,
-      email: response.profileObj.email,
-      name: response.profileObj.givenName,
-      picture: response.profileObj.imageUrl,
-      given_name: response.profileObj.givenName,
-      family_name: response.profileObj.familyName,
-      // locale: this.state.locale
-    })
-
-    console.log(API.saveGoogle.googleId);
   
   };
 

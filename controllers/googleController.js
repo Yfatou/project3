@@ -29,10 +29,18 @@ module.exports = {
   // },
   create: function (req, res) {
     db.Google
-      .createCollection(req.body)
+      .insertOne(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
+
+  // create: function (req, res) {
+  //   db.Service
+  //     .create(req.body)
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
 
   // update: function (req, res) {
   //   db.Google
