@@ -74,6 +74,7 @@ class SignUpBtn extends Component {
     .then(res => this.loadGoogle())
     .catch(err => console.log(err));
   
+    
 
   // //   .then(function (response) {
   // //     //handle success
