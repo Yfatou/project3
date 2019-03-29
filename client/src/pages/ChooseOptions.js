@@ -13,8 +13,9 @@ export class ChooseOptions extends Component {
                         {/* <p>empty</p> */}
                     </div>
 
-                    <OptionCard>
+                    
                         <div className="col-md-4">
+                        <OptionCard>
                             <div className="Optioncard">
                                 <img className="card-img-top" src="https://d3n8a8pro7vhmx.cloudfront.net/northwestassistanceministries/pages/247/features/original/Hands.png?1547549573" alt="Card image cap" />
                                 <div className="card-body-option">
@@ -25,11 +26,12 @@ export class ChooseOptions extends Component {
                                 </div>
 
                             </div>
+                            </OptionCard>
                             </div>
-        </OptionCard>
+        
 
+        <div className="col-md-4">
                         <OptionCard>
-                            <div className="col-md-4">
                                 <div className="Optioncard">
                                     <img className="card-img-top" src="https://d3n8a8pro7vhmx.cloudfront.net/northwestassistanceministries/pages/247/features/original/Hands.png?1547549573" alt="Card image cap" />
                                     <div className="card-body-option">
@@ -40,10 +42,10 @@ export class ChooseOptions extends Component {
                                     </div>
 
                                 </div>
-
+                                </OptionCard>
 
                             </div>
-                        </OptionCard>
+                       
 
 
                         <div className="col-md-2">
