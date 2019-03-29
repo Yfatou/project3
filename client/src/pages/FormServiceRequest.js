@@ -101,7 +101,6 @@ class FormServiceRequest extends Component {
               />
 
 
-
               <div>
                 <Input
                   id="datepicker"
@@ -112,8 +111,6 @@ class FormServiceRequest extends Component {
 
                 />
               </div>
-
-
 
 
               <Input

@@ -3,8 +3,7 @@
 }
 
 body{
-  background: linear-gradient(to right, #e67e22, #e74c3c); 
-   /* background: linear-gradient(to right, #1a242e, #2c3e50); */
+  
   background: white;
   color:#e74c3c;
   line-height:1.6;
@@ -22,16 +21,6 @@ body{
   align-content: center;
 }
 
-
-.brand{
-  text-align: center;
-}
-
-.brand span{
-  color:#fff;
-}
-
-
 .wrapper{
   background: linear-gradient(to right, #1a242e, #2c3e50);
   border-radius: 5%;
@@ -45,8 +34,9 @@ body{
 
 /* FORM STYLES */
 .contact{
-  background: linear-gradient(to right, #e67e22, #e74c3c); 
-  /* background: white; */
+  /* background: linear-gradient(to right, #e67e22, #e74c3c);  */
+  background: white;
+  border-radius: 3%;
   display: grid;
   grid-gap:20px;
   display:block;
