@@ -78,9 +78,7 @@ class FormServiceRequest extends Component {
     return (
       <div>
 
-        {/* <Container fluid > */}
-        {/* <Row> */}
-        {/* <Col size="md-12"> */}
+       
         <Card>
           <div id="title1" className="cardHeader title" >
             <h1 >What Assistance Would You Like To Request For?</h1>
