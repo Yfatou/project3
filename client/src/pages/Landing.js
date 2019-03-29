@@ -5,24 +5,24 @@ import Banner from "../components/Banner";
 class Landing extends Component {
     render() {
         return (
-            <body>
-                <div class="container-fluid" style={containerStyle}>
-                    <div class="row">
-                        <div class="col-md-1">
+            <div>
+                <div className="container-fluid" style={containerStyle}>
+                    <div className="row">
+                        <div className="col-md-1">
                             {/* empty */}
                         </div>
-                        <div class="col-md-6">
+                        <div className="col-md-6">
                             <Banner></Banner>
                         </div>
-                        <div class="col-md-4">
+                        <div className="col-md-4">
                             <Jumbotron></Jumbotron>
                         </div>
-                        <div class="col-md-1">
+                        <div className="col-md-1">
                             {/* empty */}
                         </div>
                     </div>
                 </div>
-            </body>
+            </div>
         );
     }
 };

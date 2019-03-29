@@ -4,17 +4,17 @@ import "./style.css";
 
 const Footer = () => {
     return (
-        <footer class="page-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <p class="white-text">© 2019 Copyright</p>
+        <footer className="page-footer">
+            <div className="container">
+                <div className="row">
+                    <div className="col l6 s12">
+                        <p className="white-text">© 2019 Copyright</p>
                     </div>
-                    <div class="col l4 offset-l2 s12">
+                    <div className="col l4 offset-l2 s12">
                        
                         <ul>
-                            <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                            <li><a className="grey-text text-lighten-3" href="#!">About Us</a></li>
+                            <li><a className="grey-text text-lighten-3" href="#!">Contact Us</a></li>
                             <li></li>
                         </ul>
                     </div>

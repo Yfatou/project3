@@ -19,9 +19,23 @@ class SignUpBtn extends Component {
   };
 
   // componentDidMount() {
-  //   this.googleResponse();
+  //   this.loadGoogle();
   // }
 
+  loadGoogle = () => {
+    API.getGoogle()
+      .then(res =>
+        this.setState({ 
+          googleId: "",
+          tokenId: "",
+          email: "",
+          name: "",
+          picture: "",
+          given_name: "",
+          family_name: ""})
+      )
+      .catch(err => console.log(err));
+  };
   constructor() {
     super();
     this.state = { isAuthenticated: false, user: null, token: "", name: "" };
@@ -46,6 +60,8 @@ class SignUpBtn extends Component {
 
     console.log(this.state.googleId);
 
+
+    // if (this.state.googleId) {
     API.saveGoogle({  
           googleId: this.state.googleId,
           tokenId: this.state.tokenId,
@@ -55,6 +71,17 @@ class SignUpBtn extends Component {
           given_name: this.state.given_name,
           family_name: this.state.family_name
     })
+    .then(res => this.loadGoogle())
+    .catch(err => console.log(err));
+  
+
+  // //   .then(function (response) {
+  // //     //handle success
+  // //     console.log(response);
+  // // })
+  // //   .catch(err => console.log(err));
+
+  // }
     
 
     // work on grabbing API
@@ -69,6 +96,25 @@ class SignUpBtn extends Component {
 
   
   };
+
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+
+  //   if (this.state.googleId) {
+  //     API.saveGoogle({  
+  //           googleId: this.state.googleId,
+  //           tokenId: this.state.tokenId,
+  //           email: this.state.email,
+  //           name: this.state.name,
+  //           picture: this.state.picture,
+  //           given_name: this.state.given_name,
+  //           family_name: this.state.family_name
+  //     })
+  //     .then(res => this.loadGoogle())
+  //       .catch(err => console.log(err));
+
+  // }};
+
 
   onFailure = (error) => {
     alert(error);
@@ -103,12 +149,14 @@ class SignUpBtn extends Component {
             buttonText="Login"
             onSuccess={this.googleResponse}
             onFailure={this.onFailure}
+            // onClick={this.handleFormSubmit}
           />
         </div>
       );
 
     return (
       <div>
+        {/* {this.googleResponse} */}
         {content}
         {WelcomeMsg}
       </div>
