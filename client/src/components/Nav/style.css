@@ -4,9 +4,17 @@
 }
 
 #brand-logo1 {
-    color:#e74c3c;
+    /* color:#e74c3c; */
     line-height:1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding:0.5em;
     font-weight: bolder;
 }
+
+.brand{
+    text-align: left;
+  }
+  
+  .brand span{
+    color: #e74c3c;
+  }

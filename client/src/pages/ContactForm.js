@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
 import axios from 'axios';
-import "./contactStyle.css";
+// import "./contactStyle.css";
 
 class ContactForm extends Component {
   //setting up  our states
@@ -40,6 +40,7 @@ class ContactForm extends Component {
       <div className="container wrapper ">
         <div className="row">
           <div className="col-md-3">
+          {/* empty */}
           </div>
           <div className="col-md-6 ">
             <Form className="contact" onSubmit={this.handleSubmit} style={{ width: '800px'}} >
@@ -94,6 +95,7 @@ class ContactForm extends Component {
             </Form>
           </div>
           <div className="col-md-3">
+          {/* empty */}
           </div>
         </div>
       </div>
