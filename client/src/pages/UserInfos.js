@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import Card from "../components/Card";
 import { Input, FormBtn } from "../components/Form";
@@ -49,7 +48,6 @@ class UserInfos extends Component {
         
         return(
             <div>
-                <Jumbotron>SeniorNextDoor</Jumbotron>
                 <Card>
                     
                     {/* <div className="cardHeader title" > */}
