@@ -6,7 +6,9 @@ function Jumbotron() {
     return (
         <div className="jumbotron">
             <div >
-                <center><SignUpBtn /></center>
+                <center>
+                <SignUpBtn/>
+                </center>
                 <div className="headText">
                     <h5>SeniorNextDoor is a volunteer based app focused on helping elderly people in your neighborhood with their daily needs.</h5>
                 </div>

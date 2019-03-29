@@ -16,5 +16,13 @@ export default {
   // Saves a service to the database
   saveService: function(serviceData) {
     return axios.post("/api/services", serviceData);
+  },
+  // Gets all google users
+  getGoogle: function() {
+    return axios.get("/api/googlesignin");
+  },
+  // Save Google profile information to the database
+  saveGoogle: function(googleData) {
+    return axios.post("/api/googlesignin", googleData);
   }
 };
