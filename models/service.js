@@ -7,7 +7,7 @@ const serviceSchema = new Schema({
   zip: { type: String, required: true },
   notes: String,
   available: { type: Boolean, default: false },
-  date: { type: Date, default: Date.now }
+  date: { type: Date }
 });
 
 const Service = mongoose.model("Service", serviceSchema);
