@@ -10,7 +10,7 @@ const googleSchema = new Schema({
     picture: { type: String},
     given_name: { type: String},
     family_name: { type: String},
-    locale: { type: String}
+    // locale: { type: String}
   });
 
 const Google = mongoose.model("Google", googleSchema);

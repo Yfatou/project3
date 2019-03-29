@@ -69,12 +69,12 @@ const googleSeed = [
         picture: "eileen.jpg",
         given_name: "Eileen",
         family_name: "Sul",
-        locale: "en"
+        // locale: "en"
     }
 ];
 
 db.Service
-    // .remove({})
+    .remove({})
     .collection.insertMany(serviceSeed)
     .then(data => {
         console.log(data.result.n + " records inserted!");
@@ -86,7 +86,7 @@ db.Service
     });
 
 db.Google
-    // .remove({})
+    .remove({})
     .collection.insertOne(googleSeed)
     .then(data => {
         console.log(data.result.n + " records inserted!");
