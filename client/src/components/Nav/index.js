@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import SignUpBtn from "../SignUpBtn";
+
 
 const Nav = () => {
   return (

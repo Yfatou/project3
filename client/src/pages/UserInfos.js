@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import API from "../utils/API";
-import Card from "../components/Card";
+//import Card from "../components/Card";
 // import { Input, FormBtn } from "../components/Form";
-import Footer from "../components/Footer";
+//import Footer from "../components/Footer";
 
 class UserInfos extends Component {
 
@@ -70,7 +70,7 @@ class UserInfos extends Component {
         console.log(this.state.image)
         return(
             <div>
-                <img src={this.state.image} alt="profile image"></img>
+                {/* <img src={this.state.image} alt="profile image"></img> */}
                 <div>First name: {this.state.firstname}</div>
                 <div>Last name: {this.state.lastname}</div>
                 <div>Email: {this.state.email}</div>
