@@ -16,5 +16,17 @@ export default {
   // Saves a service to the database
   saveService: function(serviceData) {
     return axios.post("/api/services", serviceData);
+  },
+
+  // Saves a service to the database
+  emailService: function(serviceData) {
+    return axios.post("api/services/sendemail/mail", serviceData);
   }
+
+
+
+
+
+
+  
 };
