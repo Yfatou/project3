@@ -73,7 +73,11 @@ class SignUpBtn extends Component {
     })
     .then(res => this.loadGoogle())
     .catch(err => console.log(err));
+
+    window.location.replace("../../options");
   
+  
+
     
 
   // //   .then(function (response) {
