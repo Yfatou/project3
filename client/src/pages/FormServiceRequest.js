@@ -65,16 +65,32 @@ class FormServiceRequest extends Component {
         zip: this.state.zip,
         notes: this.state.notes,
         date: this.state.date,
-        time: this.state.time
+        time: this.state.time,
+        requesterId: sessionStorage.getItem("userObjectId")
       })
         .then(res => this.loadServices())
         .catch(err => console.log(err));
     }
+
+    // Insert manual reference here to 'join' the collections
+// get user's object id..?
+// api.get(id)
+
+    API.appendGoogleId({})
+
+    // db.collectionName.update({“first_name”: “Prashant”}, {$set: {“sir_name”: “Patil”}}, {multi: true})
+
+
+
+
   };
 
 
 
   render() {
+    console.log('users obj id')
+    console.log(sessionStorage.getItem("userObjectId"))
+
     return (
       <div>
 
