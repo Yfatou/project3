@@ -9,7 +9,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // findById: function (req, res) {
+  findById: function (req, res) {
 
   //   //req.params.id is passed as a zipcode like localhost:3000/api/services/60053
   //   //the find method does a "like match" of zip code with regular expression any before the zip code or after the zip code
@@ -18,15 +18,17 @@ module.exports = {
   //    characters after the zip code. So if you type just 25 in the zip code field, it's going to search any zip code that contains 25 */
   //   var pattern = req.params.id
 
-  //   db.Google.find({ "zip": { $regex: '.*' + pattern + '.*' } },
-  //     function (err, data) {
-  //       console.log('data:', data);
+  console.log('req body')
+    // console.log(req)
+    db.Google.find({ "_id": req.params.id },
+      function (err, data) {
+        console.log('data:', data);
 
-  //       res.json(data)
-  //     })
-  //     .catch(err => res.status(422).json(err));
+        res.json(data)
+      })
+      .catch(err => res.status(422).json(err));
 
-  // },
+  },
   create: function (req, res) {
     console.log(req.body);
     console.log(db);
