@@ -65,6 +65,8 @@ class FormSearchOpportunity extends Component {
                         date={data.date}
                         time={data.time}
                         notes={data.notes}
+                        profileId={data.requesterId}
+                        
                      
                       >
                      
