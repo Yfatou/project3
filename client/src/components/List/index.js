@@ -23,10 +23,7 @@ export function ListItem({
 
  }) {  
    //below are the actual attributes from <List> tag to be display as values that were stored in the attributes
-<<<<<<< HEAD
-  return <li className="list-group-item" data-id={key}>{" Title: "  + title } <br/> {"Zip: "+  zip}  <br/> {"Date: "+ date} <br/>{"Time: "+time }<br/>{"Notes: "+notes} <br/>  {<button className="btn btn-primary" > I'M IN </button>}<br/></li>;
-=======
+  // return <li className="list-group-item" data-id={key}>{" Title: "  + title } <br/> {"Zip: "+  zip}  <br/> {"Date: "+ date} <br/>{"Time: "+time }<br/>{"Notes: "+notes} <br/>  {<button className="btn btn-primary" > I'M IN </button>}<br/></li>;
   return <li className="list-group-item" data-id={key}>{" Title: "  + title } <br/> {"Zip: "+  zip}  <br/> {"Date: "+ date} <br/>{"Time: "+time } <br/> {"Notes: "+notes} <br/> <a href={"/UserInfos/" + profileId}>Profile Link</a> <br/> {<button className="btn btn-primary" > I'M IN </button>}<br/></li>;
->>>>>>> master
 
 }
