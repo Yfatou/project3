@@ -1,7 +1,76 @@
 const db = require("../models");
-
+const nodemailer = require('nodemailer');
 // Defining methods for the servicesController
 module.exports = {
+  findemail: function(req, res) {
+
+
+    console.log("before email" +req.body.email);
+
+   let output ="<h1>"+req.body.message+"</h1>"
+    let transporter = nodemailer.createTransport({
+
+      host: 'smtp.gmail.com',
+
+      port: 587,
+
+      secure: false, // true for 465, false for other ports
+
+      auth: {
+
+          user: 'syeda.northwestern@gmail.com', // generated ethereal user
+
+          pass: 'Aff0rdable'  // generated ethereal password
+
+      },
+      // adding another object to run on localhost. otherwise rejecting on local host. 
+      tls: {
+
+          rejectUnauthorized: false
+
+      }
+
+  });
+  // setup email data with unicode symbols
+
+  let mailOptions = {
+
+      from: '"SeniorNextDoor" <syeda.northwestern@gmail.com>', // sender address
+
+      to: "syeda.northwestern@gmail.com, leadsav@gmail.com",  // list of receivers
+
+      subject: ' Contact Request From SeniorNextDoor', // Subject line
+
+      text: 'Greetings', // plain text body
+
+      html: output // html body
+
+  };
+
+  // send mail with defined transport object
+
+  transporter.sendMail(mailOptions, (error, info) => {
+
+      if (error) {
+
+          return console.log(error);
+
+      }
+
+      console.log('Message sent: %s', info.messageId);
+
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+
+      res.render('ContactForm');
+
+  });
+ console.log("success!!")
+   res.json({"success":true})
+
+
+
+  },
   findAll: function (req, res) {
     db.Service
       .find(req.query)

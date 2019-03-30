@@ -17,6 +17,12 @@ export default {
   saveService: function(serviceData) {
     return axios.post("/api/services", serviceData);
   },
+
+  // Saves a service to the database
+  emailService: function(serviceData) {
+    return axios.post("api/services/sendemail/mail", serviceData);
+  },
+  
   // Gets all google users
   getGoogle: function() {
     return axios.get("/api/googlesignin");
@@ -33,4 +39,11 @@ export default {
   appendGoogleId: function (id, serviceData) {
     return axios.put("/api/services/" + id, serviceData);
   }
+
+
+
+
+
+
+  
 };

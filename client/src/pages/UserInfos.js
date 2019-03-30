@@ -18,8 +18,8 @@ class UserInfos extends Component {
 
     constructor({ match }) {
         super()
-        console.log(match)
-        console.log(match.params.id)
+        console.log("match: " + match)
+        console.log("matchid: " + match.params.id)
         this.setState({ userId: match.params.id })
         this.state.userId = match.params.id
         console.log(this.state)
@@ -28,8 +28,9 @@ class UserInfos extends Component {
     componentDidMount() {
         console.log('component mounted, id: ' + this.state.userId)
         API.getGoogleUser(this.state.userId).then((res) => {
-            console.log(res)
-            // if(res.data.length === 0) { return }
+            console.log("res in getGoogleUser: " + res)
+            console.log(res.data)
+            if(res.data.length === 0) { return }
             this.setState({
                 email: res.data[0].email,
                 firstname: res.data[0].name,

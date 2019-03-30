@@ -13,4 +13,8 @@ router
   .put(servicesController.update)
   .delete(servicesController.remove);
 
+  router
+  .route("/sendemail/:mail")
+  .post(servicesController.findemail);
+
 module.exports = router;
