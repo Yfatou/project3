@@ -9,7 +9,6 @@ import ContactForm from "./pages/ContactForm";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import UserInfos from "./pages/UserInfos";
 
 function App() {
 
