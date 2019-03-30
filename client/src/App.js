@@ -4,11 +4,11 @@ import Landing from "./pages/Landing";
 import FormServiceRequest from "./pages/FormServiceRequest";
 import FormSearchOpportunity from "./pages/FormSearchOpportunity";
 import ChooseOptions from "./pages/ChooseOptions";
+import UserInfos from "./pages/UserInfos";
 import ContactForm from "./pages/ContactForm";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import UserInfos from "./pages/UserInfos";
 
 function App() {
 
@@ -23,6 +23,7 @@ function App() {
           <Route exact path="/services" component={FormServiceRequest} />
           <Route exact path="/searches" component={FormSearchOpportunity} />
           <Route exact path="/options" component={ChooseOptions} />
+          <Route exact path="/UserInfos" component={UserInfos} />
           <Route exact path="/landing" component={Landing} />
           <Route exact path="/send" component={ContactForm} />
           <Route component={NoMatch} />
