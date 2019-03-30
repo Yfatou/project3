@@ -77,6 +77,7 @@ class SignUpBtn extends Component {
       console.log(res)
       sessionStorage.setItem("userObjectId", res.data._id);
       console.log(sessionStorage.getItem("userObjectId"))
+      window.location.replace("../../options");
 
     })
     .catch(err => console.log(err));

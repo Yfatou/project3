@@ -21,6 +21,11 @@ export default {
   getGoogle: function() {
     return axios.get("/api/googlesignin");
   },
+  // Get single google user
+  getGoogleUser: function(id) {
+    return axios.get("/api/googlesignin/" + id)
+  },
+
   // Save Google profile information to the database
   saveGoogle: function(googleData) {
     return axios.post("/api/googlesignin", googleData);
