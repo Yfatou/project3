@@ -49,7 +49,7 @@ class FormSearchOpportunity extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className=" col md-8">
+          <div className=" col md-8 ">
             <div >
               <h6> {this.state.services.title || "Enter a zip code to Begin"} </h6>
               {/*  need to call the List component since you want to display multplie items */}
@@ -63,9 +63,9 @@ class FormSearchOpportunity extends Component {
                         title={data.title}
                         zip={data.zip}
                         date={data.date}
-                        notes={data.notes}
                         time={data.time}
-                        
+                        notes={data.notes}
+                     
                       >
                      
                       </ListItem>

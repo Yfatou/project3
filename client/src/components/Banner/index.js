@@ -3,7 +3,7 @@ import "./style.css"
 
 const Banner = () => {
     return (
-        <div className="hero-image">
+        <div className="hero-image animated bounceInLeft">
         </div>
     );
 };

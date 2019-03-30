@@ -28,13 +28,21 @@ module.exports = {
 
   // },
   create: function (req, res) {
-
-    console.log("data: "+req.body.email);
+    console.log(req.body);
+    console.log(db);
     db.Google
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
+
+  // create: function (req, res) {
+  //   db.Service
+  //     .create(req.body)
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
 
   // update: function (req, res) {
   //   db.Google

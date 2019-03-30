@@ -5,7 +5,7 @@ import Banner from "../components/Banner";
 class Landing extends Component {
     render() {
         return (
-            <body>
+            <div>
                 <div className="container-fluid" style={containerStyle}>
                     <div className="row">
                         <div className="col-md-1">
@@ -22,7 +22,7 @@ class Landing extends Component {
                         </div>
                     </div>
                 </div>
-            </body>
+            </div>
         );
     }
 };

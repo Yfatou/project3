@@ -4,15 +4,18 @@ import API from "../utils/API";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
 
+// import Calendar from 'react-calendar';
 
-class FormServiceRequest  extends Component {
+
+
+class FormServiceRequest extends Component {
   state = {
     services: [],
     title: "",
     time: "",
     zip: "",
     notes: "",
-    date: "",
+    date: new Date(),
     available: false
   };
 
@@ -23,7 +26,7 @@ class FormServiceRequest  extends Component {
   loadServices = () => {
     API.getServices()
       .then(res =>
-        this.setState({ services: res.data, title: "", time:"", zip: "", notes: "", data: "", available:"" })
+        this.setState({ services: res.data, title: "", time: "", zip: "", notes: "", date: "", available: "" })
       )
       .catch(err => console.log(err));
   };
@@ -36,10 +39,22 @@ class FormServiceRequest  extends Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
+    this.setState({ [name]: value });
   };
+
+  onClickCalander = date => {
+
+    this.setState({ date: this.state.date })
+  };
+
+ onBlur = event=>{
+  const value  = event.target.value;
+ 
+  this.setState({ date: value })
+
+  // alert(value)
+ }
+
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -57,20 +72,22 @@ class FormServiceRequest  extends Component {
     }
   };
 
+
+
   render() {
     return (
       <div>
-    
-      {/* <Container fluid > */}
-        {/* <Row> */}
-          {/* <Col size="md-12"> */}
-            <Card>
-              <div className="cardHeader title" >
-              <h1 >What Assistance Would You Like To Request For?</h1>
-              </div>
-           <div className="cardBody">
 
-           
+        {/* <Container fluid > */}
+        {/* <Row> */}
+        {/* <Col size="md-12"> */}
+        <Card>
+          <div id="title1" className="cardHeader title" >
+            <h1 >What Assistance Would You Like To Request For?</h1>
+          </div>
+          <div id="card-body" className="cardBody">
+
+
             <form >
               <Input
                 value={this.state.title}
@@ -84,17 +101,27 @@ class FormServiceRequest  extends Component {
                 name="zip"
                 placeholder="Zip (required)"
               />
-               <Input
-                value={this.state.date}
-                onChange={this.handleInputChange}
-                name="date"
-                placeholder="Date (required)"
-              />
-               <Input
+
+
+              <div>
+                <Input
+                  id="datepicker"
+                  
+                  onBlur={this.onBlur}
+ 
+                  placeholder="Date(required)"
+
+                />
+              </div>
+
+
+              <Input
+
                 value={this.state.time}
                 onChange={this.handleInputChange}
                 name="time"
                 placeholder="Time (Optional)"
+
               />
               <TextArea
                 value={this.state.notes}
@@ -102,16 +129,17 @@ class FormServiceRequest  extends Component {
                 name="notes"
                 placeholder="Notes (Optional)"
               />
-              <FormBtn 
+
+              <FormBtn
                 disabled={!(this.state.zip && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Assistance Request
               </FormBtn>
-             
+
             </form>
-            </div>
-            </Card>
+          </div>
+        </Card>
       </div>
     );
   }

@@ -23,7 +23,15 @@
     "axios": "^0.18.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+<<<<<<< HEAD
+    "moment": "^2.24.0",
     "mongoose": "^5.3.16",
-    "react-google-login": "^5.0.2"
+    "nodemailer": "^6.0.0",
+    "reactstrap": "^7.1.0"
+=======
+    "mongoose": "^5.3.16",
+    "react-google-login": "^5.0.2",
+    "moment": "^2.24.0"
+>>>>>>> 2eb18483da82dba0505c1f520460406ce5f624b1
   }
 }
