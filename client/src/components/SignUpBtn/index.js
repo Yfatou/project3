@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Jumbotron from "../components/Jumbotron";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import API from "../../utils/API"
@@ -18,10 +17,6 @@ class SignUpBtn extends Component {
     // locale: ""
   };
 
-  // componentDidMount() {
-  //   this.loadGoogle();
-  // }
-
   loadGoogle = (userDbResponse) => {
     API.getGoogle()
       .then(res =>
@@ -36,11 +31,11 @@ class SignUpBtn extends Component {
       )
       .catch(err => console.log(err));
   };
-  
+
   constructor() {
     super();
     this.state = { isAuthenticated: false, user: null, token: "", name: "" };
-  }
+  };
 
   logout = () => {
     this.setState({ isAuthenticated: false, token: '', user: null, name: "" })
@@ -49,7 +44,6 @@ class SignUpBtn extends Component {
   googleResponse = (response) => {
     // console.log(response);
     // // work on grabbing API 
-
     this.setState({ 
       googleId: response.profileObj.googleId,
       tokenId: response.tokenId,
@@ -59,11 +53,23 @@ class SignUpBtn extends Component {
       given_name: response.profileObj.givenName,
       family_name: response.profileObj.familyName})
 
-    console.log(this.state.googleId);
+    console.log("googleId: " + this.state.googleId);
 
+    // check if the user logged in is already in the database
+    API.getGoogleUser(this.state.googleId).then((res) => {
+      console.log("res in getGoogleUser: " + res.data)
 
-    // if (this.state.googleId) {
-    API.saveGoogle({  
+      // if getGoogleUser has a result, log in as that user
+
+      // else, log in as that user and insert the information in the database
+      if (res.data) {  
+        console.log("user in the database")
+        this.setState({ isAuthenticated: true, token: '', user: null, name: res.data.name })
+
+        console.log("Id when the user exists: " + res.data.googleId)
+       }
+      else {// save the user information in the database
+        API.saveGoogle({  
           googleId: this.state.googleId,
           tokenId: this.state.tokenId,
           email: this.state.email,
@@ -71,28 +77,17 @@ class SignUpBtn extends Component {
           picture: this.state.picture,
           given_name: this.state.given_name,
           family_name: this.state.family_name
-    })
-    .then(res =>{
-      // this.loadGoogle(res)
-      console.log(`userDbResponse`)
-      console.log(res)
-      sessionStorage.setItem("userObjectId", res.data._id);
-      console.log(sessionStorage.getItem("userObjectId"))
-      window.location.replace("../../options");
+        }).then(res =>{
+          // this.loadGoogle(res)
+          console.log(`userDbResponse`)
+          console.log(res)
+          sessionStorage.setItem("userObjectId", res.data._id);
+          console.log(sessionStorage.getItem("userObjectId"))
+          window.location.replace("../../options");
+        }).catch(err => console.log(err))
+      };
+    });
 
-    })
-    .catch(err => console.log(err));
-
-    
-
-  // //   .then(function (response) {
-  // //     //handle success
-  // //     console.log(response);
-  // // })
-  // //   .catch(err => console.log(err));
-
-  // }
-    
 
     // work on grabbing API
     let Gname = response.profileObj.givenName;
@@ -103,27 +98,9 @@ class SignUpBtn extends Component {
     sessionStorage.setItem("googleId", response.profileObj.googleId);
     sessionStorage.setItem("userPic", response.profileObj.imageUrl);
     this.setState({ isAuthenticated: true, token: '', user: null, name: Gname })
-
+    
   
   };
-
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-
-  //   if (this.state.googleId) {
-  //     API.saveGoogle({  
-  //           googleId: this.state.googleId,
-  //           tokenId: this.state.tokenId,
-  //           email: this.state.email,
-  //           name: this.state.name,
-  //           picture: this.state.picture,
-  //           given_name: this.state.given_name,
-  //           family_name: this.state.family_name
-  //     })
-  //     .then(res => this.loadGoogle())
-  //       .catch(err => console.log(err));
-
-  // }};
 
 
   onFailure = (error) => {
@@ -131,8 +108,6 @@ class SignUpBtn extends Component {
   }
 
   render() {
-    console.log(this.state.name, "Gname in")
-    console.log(this.state.isAuthenticated)
 
     // Value to display to the user after login
     let WelcomeMsg = !this.state.isAuthenticated ?
@@ -159,7 +134,6 @@ class SignUpBtn extends Component {
             buttonText="Login"
             onSuccess={this.googleResponse}
             onFailure={this.onFailure}
-            // onClick={this.handleFormSubmit}
           />
         </div>
       );

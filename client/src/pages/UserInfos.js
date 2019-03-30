@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import API from "../utils/API";
-import Card from "../components/Card";
+// import Card from "../components/Card";
 // import { Input, FormBtn } from "../components/Form";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 class UserInfos extends Component {
 

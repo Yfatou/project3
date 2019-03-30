@@ -59,22 +59,16 @@ class FormSearchOpportunity extends Component {
                     this.state.services.map(data => (
 
                       <ListItem key={data._id}
-
                         title={data.title}
                         zip={data.zip}
                         date={data.date}
                         time={data.time}
                         notes={data.notes}
                         profileId={data.requesterId}
-                        
-                     
                       >
-                     
                       </ListItem>
-
                     ))
                   }
-
                 </List>
               ) : (
                   <h5>No Results to Display! Enter a Zip Code.</h5>
