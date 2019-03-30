@@ -22,7 +22,7 @@ class SignUpBtn extends Component {
   //   this.loadGoogle();
   // }
 
-  loadGoogle = () => {
+  loadGoogle = (userDbResponse) => {
     API.getGoogle()
       .then(res =>
         this.setState({ 
@@ -71,9 +71,17 @@ class SignUpBtn extends Component {
           given_name: this.state.given_name,
           family_name: this.state.family_name
     })
-    .then(res => this.loadGoogle())
+    .then(res =>{
+      // this.loadGoogle(res)
+      console.log(`userDbResponse`)
+      console.log(res)
+      sessionStorage.setItem("userObjectId", res.data._id);
+      console.log(sessionStorage.getItem("userObjectId"))
+      window.location.replace("../../options");
+
+    })
     .catch(err => console.log(err));
-  
+
     
 
   // //   .then(function (response) {

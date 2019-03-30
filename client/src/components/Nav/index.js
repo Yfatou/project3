@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import SignUpBtn from "../SignUpBtn";
 
 const Nav = () => {
   return (
@@ -11,9 +12,11 @@ const Nav = () => {
           <li><a href="/landing">Home</a></li>
           <li><a href="/options">Choose-Options</a></li>
           <li><a href="/services">Service-Request-Form</a></li>
-          <li><a href="/searches">Search-Opportunity-Form</a></li>
           <li><a href="/userInfos">User</a></li>
           <li><a href="/send">Contact-Senior-Form</a></li>
+          {/* <li><a href="/options">Choose-Options</a></li>
+          <li><a href="/services">Service-Request-Form</a></li> */}
+          <li><a href="/searches">Search Opportunities!</a></li>
         </ul>
       </div>
     </nav>
