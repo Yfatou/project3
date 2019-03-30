@@ -36,6 +36,7 @@ class SignUpBtn extends Component {
       )
       .catch(err => console.log(err));
   };
+  
   constructor() {
     super();
     this.state = { isAuthenticated: false, user: null, token: "", name: "" };
@@ -47,7 +48,7 @@ class SignUpBtn extends Component {
 
   googleResponse = (response) => {
     // console.log(response);
-    // // work on grabbing API
+    // // work on grabbing API 
 
     this.setState({ 
       googleId: response.profileObj.googleId,
