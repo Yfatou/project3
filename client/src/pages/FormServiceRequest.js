@@ -76,13 +76,13 @@ class FormServiceRequest extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container jumbotron">
 
         {/* <Container fluid > */}
         {/* <Row> */}
         {/* <Col size="md-12"> */}
         <Card>
-          <div id="title1" className="cardHeader title" >
+          <div id="title1" className="cardHeader title " >
             <h1 >What Assistance Would You Like To Request For?</h1>
           </div>
           <div id="card-body" className="cardBody">

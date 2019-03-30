@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
-import axios from 'axios';
+// import axios from 'axios';
 import "./contactStyle.css";
 import API from "../utils/API";
 
 class ContactForm extends Component {
   //setting up  our states
-  state = {
-    fname: '',
-    lname: '',
-    phone: '',
-    email: '',
-    message: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      fname: '',
+      lname: '',
+      phone: '',
+      email: '',
+      message: ''
+    }
+
   }
+ 
 
 
   //function handleChange
@@ -25,7 +30,7 @@ class ContactForm extends Component {
     e.preventDefault() //preventing page refresh
 
     //declearing all of our states
-   // if (this.state.fname && this.state.lname && this.state.phone && this.state.email && this.state.message) {
+    //if (this.state.fname && this.state.email) {
       API.emailService({
        fname: this.state.fname,
         lname: this.state.lname,
@@ -35,14 +40,14 @@ class ContactForm extends Component {
       })
         .then(res => true)
         .catch(err => console.log(err));
-    //}
+   // }
   
   };
 
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({ [name]: value });
-  // };
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
 
 
   render() {
