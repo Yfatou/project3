@@ -17,6 +17,7 @@ function App() {
   return (
     <Router>
       <div>
+        <body >
         <Nav/>
         <Switch>
           <Route exact path="/" component={Landing} />
@@ -32,6 +33,7 @@ function App() {
           
         </Switch>
         <Footer />
+        </body>
       </div>
     </Router>
   );

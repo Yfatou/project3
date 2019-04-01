@@ -4,8 +4,8 @@ import "./style.css";
 
 const Footer = () => {
     return (
-        <body className="page-footer">
-        <footer >
+        // <body className="page-footer">
+        <footer  className=" page-footer sticky" id="footerpadding">
             <div >
                 <div className="row">
                     <div className="col l6 s12">
@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
-        </body>
+        // </body>
 
     );
 

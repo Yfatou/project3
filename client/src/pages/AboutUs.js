@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import AboutCard from "../components/AboutCard";
-//import MyJumbo from "../components/MyJumbo";
 
 
 class AboutUs extends Component {
@@ -35,7 +34,7 @@ class AboutUs extends Component {
                                 </div>
                                 <img className="card-body card-img" src=" https://avatars1.githubusercontent.com/u/43143077?s=400v=4" alt="about-fatou" />
                                 <div className="card-footer">
-                                    <a href="#" className="btn btnPrimary stretched-link"> Portfolio</a>
+                                    <a href="https://yfatou.github.io/PersonalPage/" target="new" className="btn btnPrimary stretched-link"> Portfolio</a>
                                 </div>
                             </AboutCard>
                         </div>
@@ -80,7 +79,7 @@ class AboutUs extends Component {
                             </div>
                             <img className="card-body card-img" src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/55937448_10162143770750455_2471544960617283584_n.jpg?_nc_cat=108&_nc_ht=scontent-ort2-2.xx&oh=7a090f5cf49226d489fe0b2e45a851a2&oe=5D4CC68B " alt="about-syeda" />
                             <div className="card-footer">
-                                <a href="https://sahmed1035.github.io/My-Portfolio/index.html" targe="new" className="btn btnPrimary stretched-link"> Portfolio</a>
+                                <a href="https://sahmed1035.github.io/My-Portfolio/index.html" target="new" className="btn btnPrimary stretched-link"> Portfolio</a>
                             </div>
                         </AboutCard>
                     </div>
