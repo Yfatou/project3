@@ -21,7 +21,7 @@ class AboutUs extends Component {
                                 life is far more than anything you can ever see or hear or touch.
                                  That deep part of you that allows you to stand for those things without which
                                  humankind cannot survive. Love that conquers hate, peace that rises triumphant
-                                  over war, and justice that proves more powerful than greed. -Fred Rogers </div>
+                                  over war, and justice that proves more powerful than greed. <em>-Fred Rogers</em> </div>
                         </div>
                     </div>
                     <div className="row">

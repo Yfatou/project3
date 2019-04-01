@@ -104,7 +104,7 @@ class ContactForm extends Component {
                 />
               </FormGroup>
 
-              <Button >SUBMIT</Button>
+              <Button>SUBMIT</Button>
             </Form>
           </div>
           <div className="col-md-3">

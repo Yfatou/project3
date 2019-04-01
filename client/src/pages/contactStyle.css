@@ -2,41 +2,33 @@
   box-sizing: border-box;
 }
 
-body{
-  
-  background: white;
-  color:#e74c3c;
-  line-height:1.6;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding:1em;
-}
 
 .container{
   max-width:1170px;
   margin-left:auto;
   margin-right:auto;
   margin-top: 3%;
+  margin-bottom: 10%;
   padding:1em;
-  box-shadow: 0 0 20px 0 #2c3e50;
+  box-shadow: 0 0 5px 0 #597592;
   align-content: center;
+  background: transparent;
+  /* border: #e74c3c solid 2px; */
 }
 
-.wrapper{
-  background: linear-gradient(to right, #1a242e, #2c3e50);
-  border-radius: 5%;
-  /* background: #2c3e50; */
-  /* background:linear-gradient(to right, #e67e22, #e74c3c); */
+ .wrapper{
+  background: transparent;
+  border-radius: 2%; 
   text-align: left;
   color: white;
   font-size: 20px;
   align-content: center;
+  border: #e74c3c solid 2px;
 }
 
 /* FORM STYLES */
 .contact{
-  /* background: linear-gradient(to right, #e67e22, #e74c3c);  */
   background: white;
-  border-radius: 3%;
   display: grid;
   grid-gap:20px;
   display:block;
@@ -45,32 +37,30 @@ body{
 
 .label{
   display:block;
-  font-size: 20px;
-  color: black;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #e74c3c;
 }
 
 
-.form-input{
+ .form-input{
   width:100%;
   padding:1em;
-  border:2px solid orange;
+  /* border:2px solid #e74c3c; */
   color: black;
-}
+} 
 
-.button{
+#mybutton{
   background: orangered;
-  border:0;
-  text-transform: uppercase;
   color: white;
-  font-size: 15px;
   margin-left: 50%;
-}
-
-.button:hover{
+} 
+/* 
+.mybutton:hover{
   background:#2c3e50;
   color:#fff;
   outline:0;
-}
+} */
 
 /* LARGE SCREENS */
 @media(min-width:700px){
