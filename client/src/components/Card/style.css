@@ -1,13 +1,8 @@
  .cardHeader { 
   background-image: url("https://d3n8a8pro7vhmx.cloudfront.net/northwestassistanceministries/pages/247/features/original/Hands.png?1547549573 "); 
-  /* background-repeat: no-repeat; */
-  /* background: linear-gradient(to left, #e67e22, #e74c3c); */
  } 
 
 .cardBody {
-  
-  /* background-color: linear-gradient(to left, #e67e22, #e74c3c); */
-  /* background: white; */
   margin: 3%;
 }
 

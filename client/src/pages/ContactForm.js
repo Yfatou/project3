@@ -15,22 +15,20 @@ class ContactForm extends Component {
       email: '',
       message: ''
     }
-
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
  
-
-
   //function handleChange
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value })
   }
 
   //function handleSubmit
-  async handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault() //preventing page refresh
 
     //declearing all of our states
-    //if (this.state.fname && this.state.email) {
+    if (this.state.fname && this.state.email) {
       API.emailService({
        fname: this.state.fname,
         lname: this.state.lname,
@@ -40,8 +38,8 @@ class ContactForm extends Component {
       })
         .then(res => true)
         .catch(err => console.log(err));
-   // }
-  
+    }
+    window.location.href="/send"
   };
 
   handleInputChange = event => {

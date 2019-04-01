@@ -53,7 +53,7 @@ module.exports = {
 
       from: '"SeniorNextDoor" <syeda.northwestern@gmail.com>', // sender address (user who is signed in with google)
 
-      to: "syeda.northwestern@gmail.com, leadsav@gmail.com",  // list of receivers (senior who post the service request and our site's email)
+      to: req.body.email,  // list of receivers (senior who post the service request)
 
       subject: ' Contact Request From SeniorNextDoor', // Subject line
 

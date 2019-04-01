@@ -17,7 +17,7 @@ export class ChooseOptions extends Component {
                         <div className="col-md-4">
                         <OptionCard>
                             <div className="Optioncard">
-                                {/* <img className="card-img-top" src="https://d3n8a8pro7vhmx.cloudfront.net/northwestassistanceministries/pages/247/features/original/Hands.png?1547549573" alt="Card image cap" /> */}
+                                <img className="card-img-top" src="https://d3n8a8pro7vhmx.cloudfront.net/northwestassistanceministries/pages/247/features/original/Hands.png?1547549573" alt="Card image cap" />
                                 <div className="card-body-option">
                                     {/* <h5 className="card-title">Find A Volunteer Opportunity</h5> */}
                                     <p className="card-text"><a href="/searches" className="col-md-12 center cardHeader-option">
@@ -52,7 +52,6 @@ export class ChooseOptions extends Component {
                         </div>
 	                </div>
                
-
            
          </div>
 

@@ -80,11 +80,7 @@ class FormServiceRequest extends Component {
 
     // db.collectionName.update({“first_name”: “Prashant”}, {$set: {“sir_name”: “Patil”}}, {multi: true})
 
-
-
-
   };
-
 
 
   render() {
@@ -102,7 +98,6 @@ class FormServiceRequest extends Component {
             <h1 >What Assistance Would You Like To Request For?</h1>
           </div>
           <div id="card-body" className="cardBody">
-
 
             <form >
               <Input

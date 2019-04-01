@@ -67,9 +67,7 @@ class FormSearchOpportunity extends Component {
                         notes={data.notes}
                         profileId={data.requesterId}
                         
-                     
-                      >
-                     
+                      > 
                       </ListItem>
 
                     ))
