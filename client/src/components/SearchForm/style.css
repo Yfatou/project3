@@ -1,9 +1,14 @@
 .btn-success {
     color: #fff;
-    background-color: #eb5424;
+    background: #eb5424;
     border-color: #e14615;
   }
 
   .btn-success:hover {
-      background-color: rgb(231, 136, 46);
+      background: rgb(231, 136, 46);
   }
+
+  .btn-large {
+      background: #e14615;
+  }
+  

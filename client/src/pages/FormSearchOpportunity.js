@@ -47,7 +47,7 @@ class FormSearchOpportunity extends Component {
 
   render() {
     return (
-      <div className="container jumbotron">
+      <div className="container " style={{width:'90%', height:'80%', border:'2px solid', boxShadow:'none'}}>
         <div className="row">
           <div className=" col md-8 ">
             <div >
