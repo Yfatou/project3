@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SearchForm from "../components/SearchForm";
+import SearchForm from "../components/SearchForm/index";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 
@@ -47,34 +47,28 @@ class FormSearchOpportunity extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container " style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
         <div className="row">
           <div className=" col md-8 ">
             <div >
               <h6> {this.state.services.title || "Enter a zip code to Begin"} </h6>
-              {/*  need to call the List component since you want to display multplie items */}
+              {/*  need to call the List component since we want to display multplie items */}
               {this.state.services.length ? (
                 <List>
                   {
                     this.state.services.map(data => (
 
                       <ListItem key={data._id}
-
                         title={data.title}
                         zip={data.zip}
                         date={data.date}
                         time={data.time}
                         notes={data.notes}
-                        profileId={data.requesterId}
-                        
-                     
-                      >
-                     
+                        profileId={data.requesterId}   
+                      > 
                       </ListItem>
-
                     ))
                   }
-
                 </List>
               ) : (
                   <h5>No Results to Display! Enter a Zip Code.</h5>

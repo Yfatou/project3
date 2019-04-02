@@ -7,7 +7,7 @@ export class ChooseOptions extends Component {
         return (
             <div >
 
-                <div className="container">
+                <div className="container" style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
                 <div className="row">
                     <div className="col-md-2">
                         {/* <p>empty</p> */}
@@ -47,35 +47,11 @@ export class ChooseOptions extends Component {
                             </div>
                        
 
-
                         <div className="col-md-2">
                             {/* <p>empty</p> */}
                         </div>
 	                </div>
                
-
-
-
-                {/* <div className="row">
-                    <div className="col-md-2"> */}
-                {/* empty */}
-                {/* </div> */}
-                {/* <OptionCard> */}
-                {/* <a href="/searches" className="col-md-12 center cardHeader-option">
-                        <h3>Find A Volunteer Opportunity</h3>
-                    </a>
-                    </OptionCard> */}
-
-                {/* <OptionCard>
-                    <a href="/services" className="col-md-12 center cardHeader-option">
-                        <h3>Post a Service Request</h3>
-                    </a>
-                    </OptionCard> */}
-
-                {/* <div className="col-md-2"> */}
-                {/* empty */}
-                {/* </div> */}
-                {/* </div> */}
            
          </div>
 
