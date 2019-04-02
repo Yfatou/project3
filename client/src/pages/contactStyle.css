@@ -7,21 +7,22 @@
   max-width:1170px;
   margin-left:auto;
   margin-right:auto;
-  margin-top: 3%;
+  margin-top: 7%;
   margin-bottom: 10%;
-  padding:1em;
-  box-shadow: 0 0 5px 0 #597592;
+  padding:0.8em;
+  /* box-shadow: 0 0 5px 0 #597592; */
   align-content: center;
   background: transparent;
   /* border: #e74c3c solid 2px; */
 }
 
  .wrapper{
-  background: transparent;
-  border-radius: 2%; 
+
+  padding: 2%;
+  border-radius: 0; 
   text-align: left;
-  color: white;
-  font-size: 20px;
+  color: #e74c3c;
+  font-size: 12px;
   align-content: center;
   border: #e74c3c solid 2px;
 }
@@ -30,14 +31,14 @@
 .contact{
   background: white;
   display: grid;
-  grid-gap:20px;
+  grid-gap:10px;
   display:block;
 }
 
 
 .label{
   display:block;
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   color: #e74c3c;
 }
@@ -55,18 +56,4 @@
   color: white;
   margin-left: 50%;
 } 
-/* 
-.mybutton:hover{
-  background:#2c3e50;
-  color:#fff;
-  outline:0;
-} */
 
-/* LARGE SCREENS */
-@media(min-width:700px){
-  .wrapper{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-  }
-
-}

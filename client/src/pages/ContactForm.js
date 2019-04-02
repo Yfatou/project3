@@ -51,9 +51,12 @@ class ContactForm extends Component {
   render() {
     return (
       <div className="container wrapper  ">
+      <h1>Contact the Senior</h1>
+      
         <div className="row">
           <div className="col-md-3">
-          {/* empty */}
+          <img className="card-img-top" src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/56300127_10162147879775455_2087679982204616704_n.jpg?_nc_cat=105&_nc_eui2=AeFG2Ql5-KwQdmxrcDxZREnmvjQ_2YhXgdXvoRqW4TdL3eEr_HhjPN-x96mxKabC8B2TpgSi7z7f2SlHcHrKDwukH2zakJfz3_x18OexqCy9sA&_nc_ht=scontent-ort2-2.xx&oh=88268b96cf29644db70feb32856f13e1&oe=5D4CC583" alt="Card image cap" />
+
           </div>
           <div className="col-md-6 ">
             <Form className="contact" onSubmit={this.handleSubmit} style={{ width: '800px'}} >
@@ -103,8 +106,10 @@ class ContactForm extends Component {
                   onChange={this.handleChange}
                 />
               </FormGroup>
-
-              <Button>SUBMIT</Button>
+              <div >
+              <Button className="btn-success">SUBMIT</Button>
+              </div>
+             
             </Form>
           </div>
           <div className="col-md-3">

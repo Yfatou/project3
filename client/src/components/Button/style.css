@@ -1,8 +1,8 @@
-.button {
+.btn-success {
     background-color: #e74c3c;
 }
 
-.button:hover{
+.btn-success:hover{
     background:#e67e22;
     color:#fff;
     outline:0;

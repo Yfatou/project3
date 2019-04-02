@@ -66,9 +66,9 @@ class AboutUs extends Component {
                             <div className="card-header">
                                 <h6 style={{ color: 'white' }}>Eileen Sul</h6>
                             </div>
-                            <img className="card-body card-img" src="" alt="about-eileen" />
+                            <img className="card-body card-img" src="https://eilsul10.github.io/Portfolio2/images/21273354_10202242253035168_1512358263956807097_o%20(1).jpg" alt="about-eileen" />
                             <div className="card-footer">
-                                <a href="#" className="btn btnPrimary stretched-link"> Portfolio</a>
+                                <a href="https://eilsul10.github.io/Portfolio2/" target="new" className="btn btnPrimary stretched-link"> Portfolio</a>
                             </div>
                         </AboutCard>
                     </div>
