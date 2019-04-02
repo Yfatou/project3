@@ -18,7 +18,7 @@ export default {
     return axios.post("/api/services", serviceData);
   },
 
-  // Saves a service to the database
+  // Send email from contact form
   emailService: function(serviceData) {
     return axios.post("api/services/sendemail/mail", serviceData);
   },
@@ -39,10 +39,6 @@ export default {
   appendGoogleId: function (id, serviceData) {
     return axios.put("/api/services/" + id, serviceData);
   }
-
-
-
-
 
 
   

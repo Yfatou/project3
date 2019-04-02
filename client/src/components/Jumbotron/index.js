@@ -2,9 +2,9 @@ import React from "react";
 import "./style.css";
 import SignUpBtn from "../SignUpBtn"
 
-function Jumbotron() {
+const Jumbotron = ()=> {
     return (
-        <div className="jumbotron">
+        <div className="jumbotron" id="jumboId">
             <div >
                 <center>
                 <SignUpBtn/>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-// import { Col, Row, Container } from "../components/Grid";
+import "./contactStyle.css";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
 
@@ -80,11 +80,7 @@ class FormServiceRequest extends Component {
 
     // db.collectionName.update({“first_name”: “Prashant”}, {$set: {“sir_name”: “Patil”}}, {multi: true})
 
-
-
-
   };
-
 
 
   render() {
@@ -92,17 +88,13 @@ class FormServiceRequest extends Component {
     console.log(sessionStorage.getItem("userObjectId"))
 
     return (
-      <div>
-
-        {/* <Container fluid > */}
-        {/* <Row> */}
-        {/* <Col size="md-12"> */}
-        <Card>
-          <div id="title1" className="cardHeader title" >
-            <h1 >What Assistance Would You Like To Request For?</h1>
+      <div className="container " style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
+ 
+        <Card style={{borderColor:'white'}}>
+          <div className="cardHeader" >
+          <h1 className=" title ">What Assistance Would You Like To Request For?</h1>
           </div>
           <div id="card-body" className="cardBody">
-
 
             <form >
               <Input
@@ -147,7 +139,7 @@ class FormServiceRequest extends Component {
               />
 
               <FormBtn
-                disabled={!(this.state.zip && this.state.title)}
+                // disabled={!(this.state.zip && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Assistance Request

@@ -3,9 +3,8 @@ import "./style.css";
 
 const Nav = () => {
   return (
-    <div className="navbar-fixed">
-    <nav>
-      <div className="nav-wrapper">
+    <nav className="navbar-fixed nav-wrapper sticky" >
+      <div>
         <a href="/"><h4 className="brand brand-logo" id="brand-logo1"><span>Senior</span>NextDoor</h4> </a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li><a href="/landing">Home</a></li>
@@ -19,7 +18,7 @@ const Nav = () => {
         </ul>
       </div>
     </nav>
-    </div>
+
   );
 }
 
