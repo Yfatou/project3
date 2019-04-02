@@ -7,7 +7,7 @@ export class ChooseOptions extends Component {
         return (
             <div >
 
-                <div className="container">
+                <div className="container" style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
                 <div className="row">
                     <div className="col-md-2">
                         {/* <p>empty</p> */}

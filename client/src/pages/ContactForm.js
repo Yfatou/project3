@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
-// import axios from 'axios';
 import "./contactStyle.css";
 import API from "../utils/API";
 
@@ -50,8 +49,8 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <div className="container wrapper  ">
-      <h1>Contact the Senior</h1>
+      <div className="container wrapper  " style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
+      <h1 className="title">Contact the Senior</h1>
       
         <div className="row">
           <div className="col-md-3">
