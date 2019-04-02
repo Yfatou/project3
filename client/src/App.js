@@ -9,13 +9,10 @@ import ContactForm from "./pages/ContactForm";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-<<<<<<< HEAD
 import Dashboard from "./pages/Dashboard";
 
 
-=======
 import AboutUs from "./pages/AboutUs";
->>>>>>> master
 
 function App() {
 
