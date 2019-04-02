@@ -17,46 +17,47 @@ const serviceSeed = [
         zip: "60053",
         notes: "Need someone for this weekend only.",
         available: false,
-        date: new Date(Date.now())
+        date: new Date(Date.now()),
+        requesterId: "5c9ecb2f10a731a1446d499f"
 
-    },
-    {
-
-        title: "House Cleaning",
-        time: "10:00 am",
-        zip: "60025",
-        notes: "Only the hallway!",
-        available: false,
-        date: new Date(Date.now())
-    },
-    {
-
-        title: "Walk the Dog",
-        time: "11:00 am",
-        zip: "60062",
-        notes: "My dog needs some attention.",
-        available: false,
-        date: new Date(Date.now())
-    },
-    {
-
-        title: "Ride to the doctor's office.",
-        time: "9:00 am",
-        zip: "60076",
-        notes: "Drive me there.",
-        available: false,
-        date: new Date(Date.now())
-    },
-
-    {
-
-        title: "Snow Shovel",
-        time: "12:00 pm",
-        zip: "60053",
-        notes: "Front area only.",
-        available: false,
-        date: new Date(Date.now())
     }
+    // {
+
+    //     title: "House Cleaning",
+    //     time: "10:00 am",
+    //     zip: "60025",
+    //     notes: "Only the hallway!",
+    //     available: false,
+    //     date: new Date(Date.now())
+    // },
+    // {
+
+    //     title: "Walk the Dog",
+    //     time: "11:00 am",
+    //     zip: "60062",
+    //     notes: "My dog needs some attention.",
+    //     available: false,
+    //     date: new Date(Date.now())
+    // },
+    // {
+
+    //     title: "Ride to the doctor's office.",
+    //     time: "9:00 am",
+    //     zip: "60076",
+    //     notes: "Drive me there.",
+    //     available: false,
+    //     date: new Date(Date.now())
+    // },
+
+    // {
+
+    //     title: "Snow Shovel",
+    //     time: "12:00 pm",
+    //     zip: "60053",
+    //     notes: "Front area only.",
+    //     available: false,
+    //     date: new Date(Date.now())
+    // }
 ];
 
 const googleSeed = [
