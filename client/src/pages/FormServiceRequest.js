@@ -66,7 +66,8 @@ class FormServiceRequest extends Component {
         notes: this.state.notes,
         date: this.state.date,
         time: this.state.time,
-        requesterId: sessionStorage.getItem("userObjectId")
+        // requesterId: sessionStorage.getItem("userObjectId")
+        requesterId: sessionStorage.getItem("userGoogleId")
       })
         .then(res => this.loadServices())
         .catch(err => console.log(err));
@@ -85,7 +86,7 @@ class FormServiceRequest extends Component {
 
   render() {
     console.log('users obj id')
-    console.log(sessionStorage.getItem("userObjectId"))
+    console.log(sessionStorage.getItem("userGoogleId"))
 
     return (
       <div className="container " style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>

@@ -60,13 +60,16 @@ class SignUpBtn extends Component {
       console.log("res in getGoogleUser: " + res.data)
 
       // if getGoogleUser has a result, log in as that user
-
       // else, log in as that user and insert the information in the database
-      if (res.data) {  
+      if (res.data) {  // the user is already in the database
         console.log("user in the database")
+        // the state is changed to authenticated: true and the name of the user is stored for the welcome message
         this.setState({ isAuthenticated: true, token: '', user: null, name: res.data.name })
-
+        // use sessionStorage to save the google id of the user 
+        // the id will be attached to a request if the user create one
+        // it willa also be used to edit the userProfile
         console.log("Id when the user exists: " + res.data.googleId)
+        sessionStorage.setItem("userGoogleId", res.data.googleId);
        }
       else {// save the user information in the database
         API.saveGoogle({  
@@ -81,8 +84,10 @@ class SignUpBtn extends Component {
           // this.loadGoogle(res)
           console.log(`userDbResponse`)
           console.log(res)
-          sessionStorage.setItem("userObjectId", res.data._id);
-          console.log(sessionStorage.getItem("userObjectId"))
+          // we should store the googleId because the getGoogleUser will search the googleId
+          // sessionStorage.setItem("userObjectId", res.data._id);
+          sessionStorage.setItem("userGoogleId", res.data.googleId);
+          console.log(sessionStorage.getItem("userGoogleId"))
           window.location.replace("../../options");
         }).catch(err => console.log(err))
       };
@@ -90,14 +95,14 @@ class SignUpBtn extends Component {
 
 
     // work on grabbing API
-    let Gname = response.profileObj.givenName;
+    // let Gname = response.profileObj.givenName;
 
-    sessionStorage.setItem("userFirstName", response.profileObj.givenName);
-    sessionStorage.setItem("userLastName", response.profileObj.familyName);
-    sessionStorage.setItem("userEmail", response.profileObj.email);
-    sessionStorage.setItem("googleId", response.profileObj.googleId);
-    sessionStorage.setItem("userPic", response.profileObj.imageUrl);
-    this.setState({ isAuthenticated: true, token: '', user: null, name: Gname })
+    // sessionStorage.setItem("userFirstName", response.profileObj.givenName);
+    // sessionStorage.setItem("userLastName", response.profileObj.familyName);
+    // sessionStorage.setItem("userEmail", response.profileObj.email);
+    // sessionStorage.setItem("googleId", response.profileObj.googleId);
+    // sessionStorage.setItem("userPic", response.profileObj.imageUrl);
+    // this.setState({ isAuthenticated: true, token: '', user: null, name: Gname })
     
   
   };
