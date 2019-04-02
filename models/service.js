@@ -7,7 +7,7 @@ const serviceSchema = new Schema({
   zip: { type: String, required: true },
   notes: String,
   available: { type: Boolean, default: false },
-  date: { type: Date },
+  date: { type: String },
   requesterId: { type: String, required: true }
 });
 

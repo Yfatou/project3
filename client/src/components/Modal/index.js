@@ -2,6 +2,7 @@ import React from 'react';
 
 import './style.css';
 
+
 const modal = (props) => {
     return (
         <div>
@@ -16,12 +17,14 @@ const modal = (props) => {
                 </div>
                 <div className="modal-body">
                     <p>
+                    
                         {props.children}
                     </p>
+
+                   
                 </div>
                 <div className="modal-footer">
                     <button className="btn-cancel" onClick={props.close}>CLOSE</button>
-                    <button className="btn-continue">CONTINUE</button>
                 </div>
             </div>
         </div>

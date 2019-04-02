@@ -24,17 +24,20 @@ class Dashboard extends Component {
         });
     }
 
+   
+
     render () {
         return (
             <div>
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
 
-                <button className="open-modal-btn" onClick={this.openModalHandler}>Open Modal</button>
+                <button className="open-modal-btn" onClick={this.openModalHandler}>How It Works</button>
 
                 <Modal
                     className="modal"
                     show={this.state.isShowing}
                     close={this.closeModalHandler}>
+          
                 </Modal>
             </div>
         );

@@ -9,7 +9,7 @@ import ContactForm from "./pages/ContactForm";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-//  import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 
 
 
@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/UserInfos" component={UserInfos} />
           <Route exact path="/landing" component={Landing} />
           <Route exact path="/send" component={ContactForm} />
-          {/* <Route exact path="/howitworks" component={Dashboard} /> */}
+          <Route exact path="/landing" component ={Dashboard} /> 
           <Route component={NoMatch} />
           
         </Switch>

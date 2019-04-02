@@ -21,6 +21,8 @@
     </meta>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://unpkg.com/js-datepicker"></script>
+    
+      
     <title>React Seniors Next Door App</title>
   </head>
   <body>
@@ -34,11 +36,21 @@
 
 
     <script>
-      $( function() {
-        $( "#datepicker" ).datepicker();
+      // $( function() {
+      //   $( "#datepicker" ).datepicker();
         
-      } );
+      // } );
+
+
+      $( function() {
+    $( "#datepicker" ).datepicker({
+      showButtonPanel: true
+    });
+  } );
+
       </script>
+
+      
 
   </body>
 
