@@ -15,7 +15,7 @@ class FormServiceRequest extends Component {
     time: "",
     zip: "",
     notes: "",
-    date: new Date(),
+    date: "",
     available: false
   };
 
@@ -111,16 +111,16 @@ class FormServiceRequest extends Component {
               />
 
 
-              <div>
+              
                 <Input
                   id="datepicker"
-                  
+                 
                   onBlur={this.onBlur}
  
                   placeholder="Date(required)"
 
                 />
-              </div>
+              
 
 
               <Input

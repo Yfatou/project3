@@ -9,6 +9,9 @@ import ContactForm from "./pages/ContactForm";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Dashboard from "./pages/Dashboard";
+
+
 import AboutUs from "./pages/AboutUs";
 
 function App() {
@@ -28,6 +31,7 @@ function App() {
           <Route exact path="/UserInfos" component={UserInfos} />
           <Route exact path="/landing" component={Landing} />
           <Route exact path="/send" component={ContactForm} />
+          <Route exact path="/landing" component ={Dashboard} /> 
           <Route exact path="/about" component={AboutUs} />
           <Route component={NoMatch} />
           
