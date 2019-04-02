@@ -7,7 +7,23 @@ module.exports = {
 
     console.log("before email" +req.body.email);
 
-   let output ="<h1>"+req.body.message+"</h1>"
+    const output = `
+    <p>You have a new contact request</p>
+    <h3>Contact Details</h3>
+    <ul>
+        <li>First Name: ${req.body.fname} </li>
+        <li>Last Name: ${req.body.lname} </li>
+        <li>Email: ${req.body.email} </li>
+        <li>Phone: ${req.body.phone} </li>
+    </ul>
+    <h3>Message</h3>
+    <p>${req.body.message}</p>
+    `;//backtick ending
+
+
+
+
+   //let output ="<h1>"+req.body.message+"</h1>"
     let transporter = nodemailer.createTransport({
 
       host: 'smtp.gmail.com',
@@ -35,9 +51,9 @@ module.exports = {
 
   let mailOptions = {
 
-      from: '"SeniorNextDoor" <syeda.northwestern@gmail.com>', // sender address
+      from: '"SeniorNextDoor" <syeda.northwestern@gmail.com>', // sender address (user who is signed in with google)
 
-      to: "syeda.northwestern@gmail.com, leadsav@gmail.com",  // list of receivers
+      to: req.body.email,  // list of receivers (senior who post the service request)
 
       subject: ' Contact Request From SeniorNextDoor', // Subject line
 

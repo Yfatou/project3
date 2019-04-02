@@ -38,7 +38,8 @@ class Landing extends Component {
 
 var containerStyle = {
     background: 'linear-gradient(to left, #e67e22, #e74c3c)',
-     backgroundSize: 'cover'
+     backgroundSize: 'cover',
+     marginTop: '3%'
 
 };
 

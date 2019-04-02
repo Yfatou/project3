@@ -1,3 +1,9 @@
-.button {
-    background-color: rgb(43, 1, 43);
+.btn-success {
+    background-color: #e74c3c;
 }
+
+.btn-success:hover{
+    background:#e67e22;
+    color:#fff;
+    outline:0;
+  }

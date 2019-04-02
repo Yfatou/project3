@@ -1,7 +1,15 @@
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+  }
+
 .nav-wrapper {
     background:  #2c3e50;
     
-}
+}  
 
 #brand-logo1 {
     /* color:#e74c3c; */

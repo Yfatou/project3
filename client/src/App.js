@@ -9,9 +9,13 @@ import ContactForm from "./pages/ContactForm";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+<<<<<<< HEAD
 import Dashboard from "./pages/Dashboard";
 
 
+=======
+import AboutUs from "./pages/AboutUs";
+>>>>>>> master
 
 function App() {
 
@@ -19,6 +23,7 @@ function App() {
   return (
     <Router>
       <div>
+        <body >
         <Nav/>
         <Switch>
           <Route exact path="/" component={Landing} />
@@ -30,10 +35,12 @@ function App() {
           <Route exact path="/landing" component={Landing} />
           <Route exact path="/send" component={ContactForm} />
           <Route exact path="/landing" component ={Dashboard} /> 
+          <Route exact path="/about" component={AboutUs} />
           <Route component={NoMatch} />
           
         </Switch>
         <Footer />
+        </body>
       </div>
     </Router>
   );
