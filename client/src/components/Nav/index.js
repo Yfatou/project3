@@ -16,7 +16,7 @@ const Nav = () => {
           {/* <li><a href="/options">Choose-Options</a></li>
           <li><a href="/services">Service-Request-Form</a></li> */}
           <li><a href="/searches">Search Opportunities!</a></li>
-          {/* <li><a href="/howitworks">How It Works</a></li> */}
+          <li><a href="/howitworks">How It Works</a></li>
         </ul>
       </div>
     </nav>
