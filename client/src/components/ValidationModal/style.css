@@ -1,8 +1,8 @@
 .modal {
-    background-color: transparent;
+    background-color: #808080;
     /* width: 0%; */
 }
 
-body > div.fade.modal.show > div {
-    width: 45%;
-}
+/* body > div.fade.modal.show > div {
+    width: 55%;
+} */
