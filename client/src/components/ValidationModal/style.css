@@ -1,0 +1,8 @@
+.modal {
+    background-color: transparent;
+    /* width: 0%; */
+}
+
+body > div.fade.modal.show > div {
+    width: 45%;
+}
