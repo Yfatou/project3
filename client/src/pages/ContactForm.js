@@ -49,7 +49,7 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <div className="container wrapper  " style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
+      <div className="container wrapper  " style={{width:'90%', background:'white', height:'75%', border:'2px solid', boxShadow:'none', marginTop:'6%'}}>
       <h1 className="title">Contact the Senior</h1>
       
         <div className="row">

@@ -67,18 +67,27 @@ class UserInfos extends Component {
     render(){
 
         return(
-            <div>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-            <UserCard>
-                <div>
-                    <img src={this.state.image} alt="profile image"></img>
-                    <h1 class="userName">{this.state.firstname} {this.state.lastname}</h1>
-                    <p class="email">{this.state.email}</p>
-                </div>
-            </UserCard>
+
+            <div style={{marginTop: '5%'}}>
+                {/* <img src={this.state.image} alt="profile image"></img> */}
+                <div>First name: {this.state.firstname}</div>
+                <div>Last name: {this.state.lastname}</div>
+                <div>Email: {this.state.email}</div>
+
+
+//             <div>
+//                 <br></br>
+//                 <br></br>
+//                 <br></br>
+//                 <br></br>
+//             <UserCard>
+//                 <div>
+//                     <img src={this.state.image} alt="profile image"></img>
+//                     <h1 class="userName">{this.state.firstname} {this.state.lastname}</h1>
+//                     <p class="email">{this.state.email}</p>
+//                 </div>
+//             </UserCard>
+
             </div>
         );
     }
