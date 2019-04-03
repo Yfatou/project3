@@ -14,7 +14,6 @@ class SignUpBtn extends Component {
     picture: "",
     given_name: "",
     family_name: "",
-    // locale: ""
   };
 
   loadGoogle = (userDbResponse) => {
@@ -42,7 +41,6 @@ class SignUpBtn extends Component {
   };
 
   googleResponse = (response) => {
-    // console.log(response);
     // // work on grabbing API 
     this.setState({ 
       googleId: response.profileObj.googleId,
@@ -57,7 +55,7 @@ class SignUpBtn extends Component {
 
     // check if the user logged in is already in the database
     API.getGoogleUser(this.state.googleId).then((res) => {
-      console.log("res in getGoogleUser: " + res.data)
+      console.log("res in getGoogleUser SignUpBtn: " + res.data)
 
       // if getGoogleUser has a result, log in as that user
       // else, log in as that user and insert the information in the database
@@ -67,9 +65,10 @@ class SignUpBtn extends Component {
         this.setState({ isAuthenticated: true, token: '', user: null, name: res.data.name })
         // use sessionStorage to save the google id of the user 
         // the id will be attached to a request if the user create one
-        // it willa also be used to edit the userProfile
+        // it will also be used to edit the userProfile
         console.log("Id when the user exists: " + res.data.googleId)
         sessionStorage.setItem("userGoogleId", res.data.googleId);
+        window.location.replace("../../options");
        }
       else {// save the user information in the database
         API.saveGoogle({  
@@ -92,19 +91,6 @@ class SignUpBtn extends Component {
         }).catch(err => console.log(err))
       };
     });
-
-
-    // work on grabbing API
-    // let Gname = response.profileObj.givenName;
-
-    // sessionStorage.setItem("userFirstName", response.profileObj.givenName);
-    // sessionStorage.setItem("userLastName", response.profileObj.familyName);
-    // sessionStorage.setItem("userEmail", response.profileObj.email);
-    // sessionStorage.setItem("googleId", response.profileObj.googleId);
-    // sessionStorage.setItem("userPic", response.profileObj.imageUrl);
-    // this.setState({ isAuthenticated: true, token: '', user: null, name: Gname })
-    
-  
   };
 
 

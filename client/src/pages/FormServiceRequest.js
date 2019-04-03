@@ -4,8 +4,6 @@ import "./contactStyle.css";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
 
-// import Calendar from 'react-calendar';
-
 
 
 class FormServiceRequest extends Component {
