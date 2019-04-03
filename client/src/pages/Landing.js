@@ -9,10 +9,12 @@ class Landing extends Component {
         return (
             <div>
                 <div className="container-fluid" style={containerStyle}>
-                <div className ="row">
-                        <div className ="col-lg-12">
-                        <Dashboard></Dashboard>
+                    {/* <div className="row">
+                        <div className="col-lg-12">
+                            <button className="btn btn-large btn-warning">HOW IT WORKS</button>
                         </div>
+                    </div> */}
+
                     <div className="row">
                         <div className="col-md-1">
                             {/* empty */}
@@ -26,20 +28,20 @@ class Landing extends Component {
                         <div className="col-md-1">
                             {/* empty */}
                         </div>
-                      
 
-                        </div>
+
                     </div>
                 </div>
             </div>
+
         );
     }
 };
 
 var containerStyle = {
     background: 'linear-gradient(to left, #e67e22, #e74c3c)',
-     backgroundSize: 'cover',
-     marginTop: '3%'
+    backgroundSize: 'cover',
+    marginTop: '3%'
 
 };
 
