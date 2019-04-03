@@ -70,7 +70,7 @@ class UserInfos extends Component {
         console.log('this.state.image')
         console.log(this.state.image)
         return(
-            <div>
+            <div style={{marginTop: '5%'}}>
                 {/* <img src={this.state.image} alt="profile image"></img> */}
                 <div>First name: {this.state.firstname}</div>
                 <div>Last name: {this.state.lastname}</div>
