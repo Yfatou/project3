@@ -3,6 +3,7 @@ import API from "../utils/API";
 import "./contactStyle.css";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
+import ValidationModal from "../components/ValidationModal";
 
 
 class FormServiceRequest extends Component {
@@ -13,9 +14,16 @@ class FormServiceRequest extends Component {
     zip: "",
     notes: "",
     date: "",
-    available: false
+    available: false,
+    shouldShowModal: false
+
   };
 
+
+  constructor (props) {
+    super(props);
+    this.modalChild = React.createRef ();
+  }
   componentDidMount() {
     this.loadServices();
   }
@@ -26,7 +34,17 @@ class FormServiceRequest extends Component {
         this.setState({ services: res.data, title: "", time: "", zip: "", notes: "", date: "", available: "" })
       )
       .catch(err => console.log(err));
+    // return (<ValidationModal></ValidationModal>);
   };
+
+  // loadModal = () => {
+  //   render () {
+  //     return (
+  //       <ValidationModal></ValidationModal>
+  //     )
+  //   }
+
+  // }
 
   deleteService = id => {
     API.deleteService(id)
@@ -66,17 +84,27 @@ class FormServiceRequest extends Component {
         // requesterId: sessionStorage.getItem("userObjectId")
         requesterId: sessionStorage.getItem("userGoogleId")
       })
-        .then(res => this.loadServices())
-        .catch(err => console.log(err));
+        .then(res => {
+          console.log('saved service')
+          this.loadServices()
+          // this.setState({shouldShowModal: true})
+          this.modalChild.current.handleShow();
+        })
+        // .catch(err => console.log(err));
+        .catch(err => alert("Make sure to log in!"));
+        // .catch(err => this.props.ValidationModal());
+
     }
 
     // Insert manual reference here to 'join' the collections
     // get user's object id..?
     // api.get(id)
 
-    API.appendGoogleId({})
+    // API.appendGoogleId({})
 
     // db.collectionName.update({“first_name”: “Prashant”}, {$set: {“sir_name”: “Patil”}}, {multi: true})
+
+    
 
   };
 
@@ -142,11 +170,15 @@ class FormServiceRequest extends Component {
               >
                 Submit Assistance Request
               </FormBtn>
+              <ValidationModal  ref={this.modalChild}>
+              </ValidationModal>
 
             </form>
           </div>
         </Card>
       </div>
+
+  
     );
   }
 }
