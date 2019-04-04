@@ -63,15 +63,16 @@ class FormServiceRequest extends Component {
         notes: this.state.notes,
         date: this.state.date,
         time: this.state.time,
-        requesterId: sessionStorage.getItem("userObjectId")
+        // requesterId: sessionStorage.getItem("userObjectId")
+        requesterId: sessionStorage.getItem("userGoogleId")
       })
         .then(res => this.loadServices())
         .catch(err => console.log(err));
     }
 
     // Insert manual reference here to 'join' the collections
-// get user's object id..?
-// api.get(id)
+    // get user's object id..?
+    // api.get(id)
 
     API.appendGoogleId({})
 
@@ -82,7 +83,7 @@ class FormServiceRequest extends Component {
 
   render() {
     console.log('users obj id')
-    console.log(sessionStorage.getItem("userObjectId"))
+    console.log(sessionStorage.getItem("userGoogleId"))
 
     return (
       <div style={{marginTop:'5%'}}>
