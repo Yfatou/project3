@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
 import "./contactStyle.css";
 import API from "../utils/API";
+import ValidationModal from "../components/ValidationModal";
 
 class ContactForm extends Component {
   //setting up  our states
@@ -15,6 +16,8 @@ class ContactForm extends Component {
       message: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.modalChild = React.createRef ();
+
   }
  
   //function handleChange
@@ -35,10 +38,14 @@ class ContactForm extends Component {
         email: this.state.email,
         message: this.state.message
       })
-        .then(res => true)
+        .then(res => {   
+        'true'
+        this.modalChild.current.handleShow();
+        setTimeout(function(){ window.location.href="/send"; }, 1500);
+        // window.location.href="/send"
+       })
         .catch(err => console.log(err));
     }
-    window.location.href="/send"
   };
 
   handleInputChange = event => {
@@ -111,6 +118,8 @@ class ContactForm extends Component {
              
             </Form>
           </div>
+          <ValidationModal  ref={this.modalChild}>
+              </ValidationModal>
           <div className="col-md-3">
           {/* empty */}
           </div>
