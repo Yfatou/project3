@@ -3,7 +3,7 @@ import "./style.css";
 
 const HowTo = ({ children }) => {
     return (
-        <div id="how-card" className="card-how">
+        <div id="how-card myimg" className="card-how">
             {children}
         </div>
     );
