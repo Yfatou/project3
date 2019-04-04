@@ -3,12 +3,13 @@
 ## Description
 Welcome to "SeniorNextDoor".
 This app has been built with elderly people leaving alone in mind.
-In this busy and active world, the elder often found themselves in an empty house once all the childrens are gone. Thus, daily activities like grocery shopping, lawn mowing, dog walking become hard to do. In the meantime, there is usually someone in the neighbourhood like an high school student that need volunteer hours that is willing to help but how to connect them? SeniornextDoor is here to help!!
+In this busy and active world, the elder often found themselves in an empty house once all the childrens are gone. Thus, daily activities like grocery shopping, lawn mowing, dog walking become hard to do. In the meantime, there is usually someone in the neighbourhood like an high school student that need volunteer hours who is willing to help but how to connect them? 
+__SeniornextDoor is here to help!!__
 
 
 The app will have two purposes:
  - Allows the requester - the elder -  to post a volunteer opportunity.
- - Gie the "provider" the option to look for volunteer opportunities in a choosen area.
+ - Give the "provider" the option to look for volunteer opportunities in a choosen area.
 
 
 
@@ -19,7 +20,7 @@ Click here xxxxxxx to access to the deployed version of the app.
 After the user logged in with google, he/she is redirected to the options page. 
 Once the choice of making a request is done, a form will allow the user to enter all the informations concerning the request.
 Name, email, zipcode and date of the requested services should be entered.
-After submitting the request, a modal will tell the user that the request have been submitted.
+After submitting the request, a message will tell the user that the request have been submitted.
 
 The request can be viewed on the "Search opportunities"
 
@@ -30,13 +31,13 @@ The request can be viewed on the "Search opportunities"
 
 ## How to look for Volunteer opportunities?
 To look for Volunteer opportunities, the user does not have to logged in. 
-A click on the "Search opprtunities" link (on the navigation bar) will display a search form. The user can then enter a zipcode to see all the requests in the chosen area.
+A click on the "Search opportunities" link (on the navigation bar) will display a search form. The user can then enter a zipcode to see all the requests in the chosen area.
 For each request, a button "I'm IN" and a link to the profile of the requester is also available. 
 When the volunteer click on the "I'm IN" button, he/she will be redirected to a contact form. Once filled, the informations in the form will be sent to the requester.
 
 The requester can then contact the volunteer.
 
-For safety issue, we choosed to not let the Volunteer contact the requester directly.
+For safety purpose, we choosed to not let the Volunteer contact the requester directly.
 
 ![](SeniorNextDoor_demo2.gif)
 
@@ -50,7 +51,7 @@ It uses the npm packaged react-google-login to log the user and the informations
 Once the user logged in SeniorNextDoor, the informations provided by Google are stored in a Mongoose collection __googles__. 
 If the user has previously visited the app, his/hers informations are not stored a second time.
 
-Requested services are also stored in a Mongoose colection __services__. Every service is linked to the profile of the requester.
+Requested services are also stored in a Mongoose collection __services__. Every service is linked to the profile of the requester.
 
 
 
@@ -93,7 +94,7 @@ To use SeniorNextDoor application from a local environment, the following steps 
 
 
 ## Future developments
-For the future, enhancements could be added to this aaplication:
+For the future, enhancements could be added to this application:
  * Add a points system so that users can keep track of how many volunteer hours they have.
  * Add a rating system so that users can be validated.
  * Give the user the option to edit their profile.
