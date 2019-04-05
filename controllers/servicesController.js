@@ -113,10 +113,24 @@ module.exports = {
 
   },
   create: function (req, res) {
+
+    console.log("req.params.id:"+req.params.id);
+
+    console.log(req.body);
+
     db.Service
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+    .create(req.body)
+    .then(function(dbService){
+     return db.Google.findOneAndUpdate({_id : req.params.id}, { $push: { requesterId: dbService._id } }, { new: true })
+    })
+    .then(dbModel => res.json(dbModel))
+  
+    .catch(err => res.status(422).json(err));
+
+    // db.Service
+    //   .create(req.body)
+    //   .then(dbModel => res.json(dbModel))
+    //   .catch(err => res.status(422).json(err));
   },
 
   update: function (req, res) {

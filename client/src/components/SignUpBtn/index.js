@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import Jumbotron from "../components/Jumbotron";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import API from "../../utils/API"
@@ -14,7 +15,12 @@ class SignUpBtn extends Component {
     picture: "",
     given_name: "",
     family_name: "",
+    // locale: ""
   };
+
+  // componentDidMount() {
+  //   this.loadGoogle();
+  // }
 
   loadGoogle = (userDbResponse) => {
     API.getGoogle()
@@ -30,18 +36,20 @@ class SignUpBtn extends Component {
       )
       .catch(err => console.log(err));
   };
-
+  
   constructor() {
     super();
     this.state = { isAuthenticated: false, user: null, token: "", name: "" };
-  };
+  }
 
   logout = () => {
     this.setState({ isAuthenticated: false, token: '', user: null, name: "" })
   };
 
   googleResponse = (response) => {
+    // console.log(response);
     // // work on grabbing API 
+
     this.setState({ 
       googleId: response.profileObj.googleId,
       tokenId: response.tokenId,
@@ -51,27 +59,11 @@ class SignUpBtn extends Component {
       given_name: response.profileObj.givenName,
       family_name: response.profileObj.familyName})
 
-    console.log("googleId: " + this.state.googleId);
+    console.log(this.state.googleId);
 
-    // check if the user logged in is already in the database
-    API.getGoogleUser(this.state.googleId).then((res) => {
-      console.log("res in getGoogleUser SignUpBtn: " + res.data)
 
-      // if getGoogleUser has a result, log in as that user
-      // else, log in as that user and insert the information in the database
-      if (res.data) {  // the user is already in the database
-        console.log("user in the database")
-        // the state is changed to authenticated: true and the name of the user is stored for the welcome message
-        this.setState({ isAuthenticated: true, token: '', user: null, name: res.data.name })
-        // use sessionStorage to save the google id of the user 
-        // the id will be attached to a request if the user create one
-        // it will also be used to edit the userProfile
-        console.log("Id when the user exists: " + res.data.googleId)
-        sessionStorage.setItem("userGoogleId", res.data.googleId);
-        window.location.replace("../../options");
-       }
-      else {// save the user information in the database
-        API.saveGoogle({  
+    // if (this.state.googleId) {
+    API.saveGoogle({  
           googleId: this.state.googleId,
           tokenId: this.state.tokenId,
           email: this.state.email,
@@ -79,19 +71,61 @@ class SignUpBtn extends Component {
           picture: this.state.picture,
           given_name: this.state.given_name,
           family_name: this.state.family_name
-        }).then(res =>{
-          // this.loadGoogle(res)
-          console.log(`userDbResponse`)
-          console.log(res)
-          // we should store the googleId because the getGoogleUser will search the googleId
-          // sessionStorage.setItem("userObjectId", res.data._id);
-          sessionStorage.setItem("userGoogleId", res.data.googleId);
-          console.log(sessionStorage.getItem("userGoogleId"))
-          window.location.replace("../../options");
-        }).catch(err => console.log(err))
-      };
-    });
+    })
+    .then(res =>{
+      // this.loadGoogle(res)
+      console.log(`userDbResponse`)
+      console.log(res)
+      sessionStorage.setItem("userObjectId", res.data._id);
+      console.log(sessionStorage.getItem("userObjectId"))
+
+      sessionStorage.setItem("volunteerData",JSON.stringify(res.data))
+    
+      window.location.replace("../../options");
+
+    })
+    .catch(err => console.log(err));
+
+
+  // //   .then(function (response) {
+  // //     //handle success
+  // //     console.log(response);
+  // // })
+  // //   .catch(err => console.log(err));
+
+  // }
+    
+
+    // work on grabbing API
+    let Gname = response.profileObj.givenName;
+
+    sessionStorage.setItem("userFirstName", response.profileObj.givenName);
+    sessionStorage.setItem("userLastName", response.profileObj.familyName);
+    sessionStorage.setItem("userEmail", response.profileObj.email);
+    sessionStorage.setItem("googleId", response.profileObj.googleId);
+    sessionStorage.setItem("userPic", response.profileObj.imageUrl);
+    this.setState({ isAuthenticated: true, token: '', user: null, name: Gname })
+
+  
   };
+
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+
+  //   if (this.state.googleId) {
+  //     API.saveGoogle({  
+  //           googleId: this.state.googleId,
+  //           tokenId: this.state.tokenId,
+  //           email: this.state.email,
+  //           name: this.state.name,
+  //           picture: this.state.picture,
+  //           given_name: this.state.given_name,
+  //           family_name: this.state.family_name
+  //     })
+  //     .then(res => this.loadGoogle())
+  //       .catch(err => console.log(err));
+
+  // }};
 
 
   onFailure = (error) => {
@@ -99,6 +133,8 @@ class SignUpBtn extends Component {
   }
 
   render() {
+    console.log(this.state.name, "Gname in")
+    console.log(this.state.isAuthenticated)
 
     // Value to display to the user after login
     let WelcomeMsg = !this.state.isAuthenticated ?
@@ -125,6 +161,8 @@ class SignUpBtn extends Component {
             buttonText="Login"
             onSuccess={this.googleResponse}
             onFailure={this.onFailure}
+            prompt={"consent"}
+            // onClick={this.handleFormSubmit}
           />
         </div>
       );

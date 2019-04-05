@@ -10,14 +10,12 @@
   margin-top: 7%;
   margin-bottom: 5%;
   padding:0.8em;
-  /* box-shadow: 0 0 5px 0 #597592; */
   align-content: center;
   background: transparent;
   border: #e74c3c solid 2px;
 }
 
  .wrapper{
-
   padding: 0;
   margin-right: 5%;
   margin-bottom: 1%;
@@ -78,5 +76,5 @@ img {
   width: 100px;
   height: 100px;
   object-fit: none;
-  padding-bottom: 150%;
+
 }
