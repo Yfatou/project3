@@ -23,13 +23,17 @@ return (
           {/* <li><a href="/options">Choose-Options</a></li>
           <li><a href="/services">Service-Request-Form</a></li> */}
           <li><a href="/searches">Search Opportunities!</a></li>
-          <GoogleLogout
+          {
+           sessionStorage.volunteerData 
+                ?(<GoogleLogout
             clientId="601157754613-0js8ncq3uld0pj9gp3vtf1insj3lacu4.apps.googleusercontent.com"
             buttonText="Logout"
             onLogoutSuccess={logout}
             >
           </GoogleLogout>
-
+): ""
+          }
+          
           <li><a href="/howitworks">How It Works</a></li>
         </ul>
       </div>
