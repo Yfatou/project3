@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
 import SignUpBtn from "../SignUpBtn";
-import Button from "../Button";
 
 const Jumbotron = ()=> {
     return (
@@ -18,16 +17,16 @@ const Jumbotron = ()=> {
                 <div className="subText">
                     <h6>Ultimately, we hope that people will get to know their neighbors and improve their communities from within.</h6>
                 </div>
-                {/* <br></br> */}
                 <hr></hr>
                 <center>
                 <SignUpBtn />
-                <a className="btn btn-light" 
-                   href="https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp" 
-                   role="button"
-                   target="_blank">
-                   Or Create a Google Account 
-                </a>
+                    <a className="btn btn-light" 
+                        href="https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp" 
+                        role="button"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Or Create a Google Account 
+                    </a>
                 </center>
             </div>
         </div>

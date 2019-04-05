@@ -7,11 +7,6 @@
    justify-content: center;
    font-size: 1.5rem;
    box-shadow: none;
-   /* box-shadow: 0 3px 6px #999, 0 3px 6px #999; */
-   
- }
- body {
-   /* margin-bottom: 30%; */
  }
  .card-header {
   background: linear-gradient(to left, #e67e22, #e74c3c);
