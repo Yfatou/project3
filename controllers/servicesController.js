@@ -21,9 +21,6 @@ module.exports = {
     `;//backtick ending
 
 
-
-
-   //let output ="<h1>"+req.body.message+"</h1>"
     let transporter = nodemailer.createTransport({
 
       host: 'smtp.gmail.com',
@@ -81,7 +78,7 @@ module.exports = {
       res.render('ContactForm');
 
   });
- console.log("success!!")
+   console.log("success!!")
    res.json({"success":true})
 
 
@@ -106,16 +103,13 @@ module.exports = {
     db.Service.find({ "zip": { $regex: '.*' + pattern + '.*' } },
       function (err, data) {
         console.log('data:', data);
-
         res.json(data)
       })
       .catch(err => res.status(422).json(err));
 
   },
   create: function (req, res) {
-
     console.log("req.params.id:"+req.params.id);
-
     console.log(req.body);
 
     db.Service
@@ -124,13 +118,7 @@ module.exports = {
      return db.Google.findOneAndUpdate({_id : req.params.id}, { $push: { requesterId: dbService._id } }, { new: true })
     })
     .then(dbModel => res.json(dbModel))
-  
     .catch(err => res.status(422).json(err));
-
-    // db.Service
-    //   .create(req.body)
-    //   .then(dbModel => res.json(dbModel))
-    //   .catch(err => res.status(422).json(err));
   },
 
   update: function (req, res) {

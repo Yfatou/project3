@@ -14,8 +14,6 @@ import AboutUs from "./pages/AboutUs";
 
 function App() {
 
-  // this.state =  isAuthenticated: false };
-
   return (
     <Router>
       <div>

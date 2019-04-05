@@ -1,20 +1,12 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Banner from "../components/Banner";
-import Dashboard from "../pages/Dashboard";
-
 
 class Landing extends Component {
     render() {
         return (
             <div>
                 <div className="container-fluid" style={containerStyle}>
-                    {/* <div className="row">
-                        <div className="col-lg-12">
-                            <button className="btn btn-large btn-warning">HOW IT WORKS</button>
-                        </div>
-                    </div> */}
-
                     <div className="row">
                         <div className="col-md-1">
                             {/* empty */}
@@ -28,8 +20,6 @@ class Landing extends Component {
                         <div className="col-md-1">
                             {/* empty */}
                         </div>
-
-
                     </div>
                 </div>
             </div>

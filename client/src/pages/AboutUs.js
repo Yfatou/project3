@@ -7,20 +7,17 @@ class AboutUs extends Component {
         return (
             <body>
 
-            
-
             <div id="aboutBody">
                 <div >
                     <div className="row">
                         <div className="col-md-12">
-                            
                             <div className="jumbotron">
                             <h1 className="center second-heading">Meet Our Team!</h1>
                             When I say it's you I like, I'm talking about that part of you that knows that
-                                life is far more than anything you can ever see or hear or touch.
-                                 That deep part of you that allows you to stand for those things without which
-                                 humankind cannot survive. Love that conquers hate, peace that rises triumphant
-                                  over war, and justice that proves more powerful than greed. <em>-Fred Rogers</em> </div>
+                            life is far more than anything you can ever see or hear or touch.
+                            That deep part of you that allows you to stand for those things without which
+                            humankind cannot survive. Love that conquers hate, peace that rises triumphant
+                            over war, and justice that proves more powerful than greed. <em>-Fred Rogers</em> </div>
                         </div>
                     </div>
                     <div className="row">
@@ -92,12 +89,5 @@ class AboutUs extends Component {
         );
     }
 };
-
-// var containerStyle = {
-//     background: 'linear-gradient(to left, #e67e22, #e74c3c)',
-//      backgroundSize: 'cover'
-
-// };
-
 
 export default AboutUs;

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SeniorNextdoor
 
 ## Description
@@ -14,7 +13,7 @@ The app will have two purposes:
 
 
 
-Click here xxxxxxx to access to the deployed version of the app.
+Click here https://seniornextdoor-live1.herokuapp.com/ to access to the deployed version of the app.
 
 
 ## How to request help?
@@ -108,7 +107,3 @@ For the future, enhancements could be added to this application:
  - Eileen Sul (https://github.com/eilsul10)
  - Fatou Thiam (https://github.com/Yfatou)
 
-
-=======
-# project3
->>>>>>> master

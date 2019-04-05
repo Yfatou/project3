@@ -18,57 +18,23 @@ module.exports = {
     //    characters after the zip code. So if you type just 25 in the zip code field, it's going to search any zip code that contains 25 */
     //   var pattern = req.params.id
 
-    console.log('req body')
-    // console.log(req)
     db.Google.find({ "_id": req.params.id },
       function (err, data) {
-        console.log('data:', data);
-
         res.json(data)
       })
       .catch(err => res.status(422).json(err));
 
   },
   create: function (req, res) {
-    console.log(req.body);
-    console.log(db);
-
     db.Google.findOne({ email: req.body.email }).then(dbModel => {
       if (!dbModel) {
          db.Google
           .create(req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
-
-       
       }
       else
           res.json(dbModel)
     })
-
-
   },
-
-
-  // create: function (req, res) {
-  //   db.Service
-  //     .create(req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-
-  // update: function (req, res) {
-  //   db.Google
-  //     .findOneAndUpdate({ _id: req.params.id }, req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-
-  // remove: function (req, res) {
-  //   db.Service
-  //     .findById({ _id: req.params.id })
-  //     .then(dbModel => dbModel.remove())
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // }
 };

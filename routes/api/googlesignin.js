@@ -10,7 +10,4 @@ router.route("/")
 router.route("/:id")
   .get(googleController.findById);
 
-//   .put(googleController.update)
-//   // .delete(googleController.remove);
-
 module.exports = router;

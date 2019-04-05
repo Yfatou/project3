@@ -33,7 +33,7 @@ const Nav = () => {
                 </GoogleLogout>
               ) : ""
           }
-          {/* <li><a href="/howitworks">How It Works</a></li> */}
+          <li><a href="/howitworks">How It Works</a></li>
         </ul>
       </div>
     </nav>
