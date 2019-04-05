@@ -10,6 +10,12 @@ const googleSchema = new Schema({
     picture: { type: String},
     given_name: { type: String},
     family_name: { type: String},
+    requesterId: [
+          {
+              type: Schema.Types.ObjectId,
+              ref: "Service"
+          }
+      ]
     // locale: { type: String}
   });
 

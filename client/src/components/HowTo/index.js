@@ -1,13 +1,12 @@
 import React from "react";
 import "./style.css";
 
-const UserCard = ({ children }) => {
+const HowTo = ({ children }) => {
     return (
-
-        <div class="cardUser">
+        <div id="how-card" className="card-how">
             {children}
         </div>
     );
 }
 
-export default UserCard;
+export default HowTo;

@@ -9,6 +9,7 @@ router.route("/")
 // Matches with "/api/googlesignin/:id"
 router.route("/:id")
   .get(googleController.findById);
+
 //   .put(googleController.update)
 //   // .delete(googleController.remove);
 

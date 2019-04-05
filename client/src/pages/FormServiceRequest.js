@@ -4,6 +4,8 @@ import "./contactStyle.css";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
 
+// import Calendar from 'react-calendar';
+
 
 
 class FormServiceRequest extends Component {
@@ -13,7 +15,7 @@ class FormServiceRequest extends Component {
     time: "",
     zip: "",
     notes: "",
-    date: new Date(),
+    date: "",
     available: false
   };
 
@@ -45,12 +47,12 @@ class FormServiceRequest extends Component {
     this.setState({ date: this.state.date })
   };
 
- onBlur = event=>{
+  onblur = event=>{
   const value  = event.target.value;
  
   this.setState({ date: value })
 
-  // alert(value)
+   alert(value)
  }
 
 
@@ -64,16 +66,15 @@ class FormServiceRequest extends Component {
         notes: this.state.notes,
         date: this.state.date,
         time: this.state.time,
-        // requesterId: sessionStorage.getItem("userObjectId")
-        requesterId: sessionStorage.getItem("userGoogleId")
-      })
+        requesterId: sessionStorage.getItem("userObjectId")
+      },JSON.parse(sessionStorage.volunteerData)._id)
         .then(res => this.loadServices())
         .catch(err => console.log(err));
     }
 
     // Insert manual reference here to 'join' the collections
-    // get user's object id..?
-    // api.get(id)
+// get user's object id..?
+// api.get(id)
 
     API.appendGoogleId({})
 
@@ -84,7 +85,7 @@ class FormServiceRequest extends Component {
 
   render() {
     console.log('users obj id')
-    console.log(sessionStorage.getItem("userGoogleId"))
+    console.log(sessionStorage.getItem("userObjectId"))
 
     return (
       <div className="container " style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
@@ -97,10 +98,12 @@ class FormServiceRequest extends Component {
 
             <form >
               <Input
+      
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
                 placeholder="Assistance Needed (required)"
+               
               />
               <Input
                 value={this.state.zip}
@@ -110,16 +113,18 @@ class FormServiceRequest extends Component {
               />
 
 
-              <div>
+              
                 <Input
                   id="datepicker"
+                  readonly
+                  type="date"  
+                  name="date"
+                  onChange={this.handleInputChange}
                   
-                  onBlur={this.onBlur}
- 
                   placeholder="Date(required)"
 
                 />
-              </div>
+              
 
 
               <Input

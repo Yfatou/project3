@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SeniorNextdoor
 
 ## Description
@@ -108,3 +109,6 @@ For the future, enhancements could be added to this application:
  - Fatou Thiam (https://github.com/Yfatou)
 
 
+=======
+# project3
+>>>>>>> master

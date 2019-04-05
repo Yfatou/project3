@@ -8,15 +8,26 @@ class ContactForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fname: '',
-      lname: '',
+      fname: JSON.parse(sessionStorage.volunteerData).given_name,
+      lname: JSON.parse(sessionStorage.volunteerData).family_name,
       phone: '',
-      email: '',
-      message: ''
+      email: JSON.parse(sessionStorage.volunteerData).email,
+      message: '',
+      volunteerData:JSON.parse(sessionStorage.volunteerData)
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+   
  
+ 
+ 
+  }
+  componentDidMount() {
+   
+    // this.searchServices();
+  }
+
+
   //function handleChange
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value })
@@ -27,18 +38,27 @@ class ContactForm extends Component {
     e.preventDefault() //preventing page refresh
 
     //declearing all of our states
-    if (this.state.fname && this.state.email) {
+
+    let fname=this.state.fname ?this.state.fname  : this.state.volunteerData.given_name;
+    let email= this.state.email ?this.state.email : this.state.volunteerData.email;
+    if (fname&& email) {
       API.emailService({
-       fname: this.state.fname,
-        lname: this.state.lname,
+       fname: fname,
+        lname: this.state.lname ?this.state.lname  : this.state.volunteerData.family_name,
         phone: this.state.phone,
-        email: this.state.email,
+        email: email,
         message: this.state.message
       })
         .then(res => true)
         .catch(err => console.log(err));
     }
-    window.location.href="/send"
+
+    this.setState({  fname: '',
+    lname: '',
+    phone: '',
+    email: '',
+    message: ''});
+    window.location.href="/send";
   };
 
   handleInputChange = event => {
@@ -49,7 +69,9 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <div className="container wrapper  " style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
+      // <div className="container wrapper  " style={{width:'90%', background:'white', height:'75%', border:'2px solid', boxShadow:'none', marginTop:'6%'}}>
+            <div className="container wrapper " style={{background:'white'}}>
+
       <h1 className="title">Contact the Senior</h1>
       
         <div className="row">
@@ -64,6 +86,7 @@ class ContactForm extends Component {
                 <Input className="form-input"
                   type="text"
                   name="fname"
+                  value={this.state.fname}
                   onChange={this.handleChange}
                 //to get the values out of the field. need to use onChange. 
                 //need to define handleChange function
@@ -75,6 +98,7 @@ class ContactForm extends Component {
                 <Input className="form-input"
                   type="text"
                   name="lname"
+                  value={this.state.lname}
                   onChange={this.handleChange}
                 />
               </FormGroup>
@@ -93,6 +117,7 @@ class ContactForm extends Component {
                 <Input className="form-input"
                   type="email"
                   name="email"
+                  value={this.state.email}
                   onChange={this.handleChange}
                 />
               </FormGroup>
