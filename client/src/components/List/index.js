@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-
+import {browserHistory} from 'react-router';
 // This file exports both the List and ListItem components
 
 export function List({ children }) {
@@ -12,17 +12,8 @@ export function List({ children }) {
 }
 //passing the props object in as an argument. This case the props object gets destructed into the
 //actual name of the attributes from FormSearchOpportunity.js-> <list> 
-export function ListItem({ 
-  key,  
-  title,
-  zip,
-  date,
-  notes,
-  time,
-  profileId 
-
- }) {  
+export function ListItem(props) {  
    //below are the actual attributes from <List> tag to be display as values that were stored in the attributes
-  return <li className="list-group-item" data-id={key}>{" Title: "  + title } <br/> {"Zip: "+  zip}  <br/> {"Date: "+ date} <br/>{"Time: "+time } <br/> {"Notes: "+notes} <br/> <a href={"/UserInfos/" + profileId}>Profile Link</a> <br/> {<button className="btn btn-success" > I'M IN </button>}<br/></li>;
+  return <li className="list-group-item" data-id={props.key}>{" Title: "  + props.title } <br/> {"Zip: "+  props.zip}  <br/> {"Date: "+ props.date} <br/>{"Time: "+props.time } <br/> {"Notes: "+props.notes} <br/> <a href={"/UserInfos/" + props.profileId}>Profile Link</a> <br/> {<a  className="btn btn-success"   href={"/send"} style={{color : "white"}}  >  I'M IN </a>}<br/></li>;
 
 }

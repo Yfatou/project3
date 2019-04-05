@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import API from "../utils/API";
-import UserCard from "../components/UserCard";
+//import Card from "../components/Card";
+// import { Input, FormBtn } from "../components/Form";
+//import Footer from "../components/Footer";
 
 class UserInfos extends Component {
 
@@ -25,17 +27,16 @@ class UserInfos extends Component {
 
     componentDidMount() {
         console.log('component mounted, id: ' + this.state.userId)
-        API.getGoogleUser(this.state.userId).then((res) => {
+        API.getGoogleUser(JSON.parse(sessionStorage.volunteerData)._id).then((res) => {
             console.log("res in getGoogleUser: " + res)
             console.log(res.data)
-            console.log("res.data.email: " + res.data.email)
             if(res.data.length === 0) { return }
             this.setState({
-                email: res.data.email,
-                firstname: res.data.name,
-                lastname: res.data.family_name,
-                image: res.data.picture,
-                zip: res.data.zip
+                email: res.data[0].email,
+                firstname: res.data[0].name,
+                lastname: res.data[0].family_name,
+                image: res.data[0].picture,
+                zip: res.data[0].zip
             })
         })
         console.log("storage" + sessionStorage.getItem("response"));
@@ -65,32 +66,20 @@ class UserInfos extends Component {
 
 
     render(){
-
+  
+        console.log('this.state.image')
+        console.log(this.state.image)
         return(
-
-            // <div style={{marginTop: '5%'}}>
-            //     <img src={this.state.image} alt="profile image"></img>
-            //     <div>First name: {this.state.firstname}</div>
-            //     <div>Last name: {this.state.lastname}</div>
-            //     <div>Email: {this.state.email}</div>
-
-
-           <div>
-              <br></br>
-              <br></br>
-            <br></br>
-              <br></br>
-            <UserCard>
-              <div>
-                <img src={this.state.image} alt="profile image"></img>
-                 <h1 class="userName">{this.state.firstname} {this.state.lastname}</h1>
-                   <p class="email">{this.state.email}</p>
-                </div>
-            </UserCard>
+            <div style={{marginTop: '5%'}}>
+                {/* <img src={this.state.image} alt="profile image"></img> */}
+                <div>First name: {this.state.firstname}</div>
+                <div>Last name: {this.state.lastname}</div>
+                <div>Email: {this.state.email}</div>
 
             </div>
         );
     }
 }
+
 
 export default UserInfos;

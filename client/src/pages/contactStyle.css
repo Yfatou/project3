@@ -16,9 +16,8 @@
 }
 
  .wrapper{
-height: 10%;
   padding: 0;
-  margin-right: 15%;
+  margin-right: 5%;
   margin-bottom: 1%;
   border-radius: 0; 
   text-align: left;
@@ -77,4 +76,5 @@ img {
   width: 100px;
   height: 100px;
   object-fit: none;
+
 }
