@@ -1,13 +1,7 @@
 import React from "react";
 import "./style.css";
-import { GoogleLogout } from 'react-google-login';
-// import LogOutBtn from "../LogOutBtn";
 
 const Nav = () => {
-
-  const logout = (response) => {
-    console.log("logged out");
-  }
 
   return (
     <nav className="navbar-fixed nav-wrapper sticky" >
@@ -22,18 +16,12 @@ const Nav = () => {
           {/* <li><a href="/options">Choose-Options</a></li>
           <li><a href="/services">Service-Request-Form</a></li> */}
           {/* <li><a href="/searches">Search Opportunities!</a></li> */}
-
+          <li><a href="/howitworks">How It Works</a></li>
           {/* When the user is logged in, the logout button appears */}
           {sessionStorage.volunteerData 
-            ? (<GoogleLogout className="logOutBtn" style = {{height: "10%" }}
-                  clientId="601157754613-0js8ncq3uld0pj9gp3vtf1insj3lacu4.apps.googleusercontent.com"
-                  buttonText="Logout"
-                  onLogoutSuccess={logout}
-                >
-                </GoogleLogout>
-              ) : ""
+            ? (<li><a href="/landing" className="btn btn-light">Logout</a></li>)
+            : ((<li><a href="/landing" className="btn btn-light" style={{visibility:"hidden"}}>Logout</a></li>))
           }
-          <li><a href="/howitworks">How It Works</a></li>
         </ul>
       </div>
     </nav>
