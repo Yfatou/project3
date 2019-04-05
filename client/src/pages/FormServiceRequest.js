@@ -3,6 +3,7 @@ import API from "../utils/API";
 import "./contactStyle.css";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
+import ValidationModal from "../components/ValidationModal";
 
 // import Calendar from 'react-calendar';
 
@@ -16,8 +17,14 @@ class FormServiceRequest extends Component {
     zip: "",
     notes: "",
     date: "",
-    available: false
+    available: false,
+    shouldShowModal: false
   };
+
+  constructor(props) {
+    super(props);
+    this.modalChild = React.createRef();
+  }
 
   componentDidMount() {
     this.loadServices();
@@ -47,13 +54,13 @@ class FormServiceRequest extends Component {
     this.setState({ date: this.state.date })
   };
 
-  onblur = event=>{
-  const value  = event.target.value;
- 
-  this.setState({ date: value })
+  onblur = event => {
+    const value = event.target.value;
 
-   alert(value)
- }
+    this.setState({ date: value })
+
+    alert(value)
+  }
 
 
   handleFormSubmit = event => {
@@ -67,14 +74,19 @@ class FormServiceRequest extends Component {
         date: this.state.date,
         time: this.state.time,
         requesterId: sessionStorage.getItem("userObjectId")
-      },JSON.parse(sessionStorage.volunteerData)._id)
-        .then(res => this.loadServices())
-        .catch(err => console.log(err));
+      }, JSON.parse(sessionStorage.volunteerData)._id)
+        .then(res => {
+          console.log('saved service')
+          this.loadServices()
+          // this.setState({shouldShowModal: true})
+          this.modalChild.current.handleShow();
+        })
+        .catch(err => alert("Make sure to log in!"));
     }
 
     // Insert manual reference here to 'join' the collections
-// get user's object id..?
-// api.get(id)
+    // get user's object id..?
+    // api.get(id)
 
     API.appendGoogleId({})
 
@@ -88,22 +100,22 @@ class FormServiceRequest extends Component {
     console.log(sessionStorage.getItem("userObjectId"))
 
     return (
-      <div className="container " style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
- 
-        <Card style={{borderColor:'white'}}>
+      <div className="container " style={{ width: '90%', background: 'white', height: '80%', border: '2px solid', boxShadow: 'none', marginTop: '4%' }}>
+
+        <Card style={{ borderColor: 'white' }}>
           <div className="cardHeader" >
-          <h1 className=" title ">What Assistance Would You Like To Request For?</h1>
+            <h1 className=" title ">What Assistance Would You Like To Request For?</h1>
           </div>
           <div id="card-body" className="cardBody">
 
             <form >
               <Input
-      
+
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
                 placeholder="Assistance Needed (required)"
-               
+
               />
               <Input
                 value={this.state.zip}
@@ -113,18 +125,18 @@ class FormServiceRequest extends Component {
               />
 
 
-              
-                <Input
-                  id="datepicker"
-                  readonly
-                  type="date"  
-                  name="date"
-                  onChange={this.handleInputChange}
-                  
-                  placeholder="Date(required)"
 
-                />
-              
+              <Input
+                id="datepicker"
+                readonly
+                type="date"
+                name="date"
+                onChange={this.handleInputChange}
+
+                placeholder="Date(required)"
+
+              />
+
 
 
               <Input
@@ -148,6 +160,9 @@ class FormServiceRequest extends Component {
               >
                 Submit Assistance Request
               </FormBtn>
+
+              <ValidationModal  ref={this.modalChild}>
+              </ValidationModal>
 
             </form>
           </div>
