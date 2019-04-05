@@ -1,17 +1,14 @@
 import React from "react";
 import "./style.css";
-import SignUpBtn from "../SignUpBtn"
+import SignUpBtn from "../SignUpBtn";
+import Button from "../Button";
 
 const Jumbotron = ()=> {
     return (
         <div className="jumbotron" id="jumboId">
             <div >
-                <center>
-                <SignUpBtn/>
-                </center>
-                            
                 <div className="headText">
-                    <h5>SeniorNextDoor is a volunteer based app focused on helping elderly people in your neighborhood with their daily needs.</h5>
+                    <h4>SeniorNextDoor is a volunteer based app focused on helping elderly people in your neighborhood with their daily needs.</h4>
                 </div>
 
                 <div className="subText">
@@ -21,11 +18,21 @@ const Jumbotron = ()=> {
                 <div className="subText">
                     <h6>Ultimately, we hope that people will get to know their neighbors and improve their communities from within.</h6>
                 </div>
-                <br></br>
-
+                {/* <br></br> */}
+                <hr></hr>
+                <center>
+                <SignUpBtn />
+                <a className="btn btn-light" 
+                   href="https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp" 
+                   role="button"
+                   target="_blank">
+                   Or Create a Google Account 
+                </a>
+                </center>
             </div>
         </div>
     );
 }
+
 
 export default Jumbotron;

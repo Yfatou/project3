@@ -6,17 +6,33 @@ import API from "../../utils/API"
 
 class SignUpBtn extends Component {
 
-  state = {
-    googleId: "",
-    tokenId: "",
-    email: "",
-    email_verified: "",
-    name: "",
-    picture: "",
-    given_name: "",
-    family_name: "",
-    // locale: ""
-  };
+constructor() {
+    super();
+    this.state = { 
+      isAuthenticated: false, 
+      user: null, 
+      token: "", 
+      name: "",
+      googleId: "",
+      tokenId: "",
+      email: "",
+      email_verified: "",
+      name: "",
+      picture: "",
+      given_name: "",
+      family_name: "",
+    };
+};
+  // state = {
+  //   googleId: "",
+  //   tokenId: "",
+  //   email: "",
+  //   email_verified: "",
+  //   name: "",
+  //   picture: "",
+  //   given_name: "",
+  //   family_name: "",
+  // };
 
   // componentDidMount() {
   //   this.loadGoogle();
@@ -36,11 +52,6 @@ class SignUpBtn extends Component {
       )
       .catch(err => console.log(err));
   };
-  
-  constructor() {
-    super();
-    this.state = { isAuthenticated: false, user: null, token: "", name: "" };
-  }
 
   logout = () => {
     this.setState({ isAuthenticated: false, token: '', user: null, name: "" })
@@ -138,11 +149,11 @@ class SignUpBtn extends Component {
 
     // Value to display to the user after login
     let WelcomeMsg = !this.state.isAuthenticated ?
-      (<h1> Please sign in</h1>)
+      (<h2> Please sign in</h2>)
       :
-      (<h1> Welcome {this.state.name} </h1>);
+      (<h2> Welcome {this.state.name} </h2>);
 
-
+    console.log(this.state.isAuthenticated);
     let content = !!this.state.isAuthenticated ?
       (
         <div>

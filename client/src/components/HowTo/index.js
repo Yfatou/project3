@@ -10,4 +10,3 @@ const HowTo = ({ children }) => {
 }
 
 export default HowTo;
-

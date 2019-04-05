@@ -10,6 +10,7 @@
 } */
 #jumboId {
     margin-top: 15%;
+    padding-top: 5%;
     border-radius: 5%;
     background: linear-gradient(to right, #1a242e, #2c3e50);
     max-width: 100%;
@@ -21,7 +22,9 @@
     font-size: 28px;
     font-weight: bolder;
     color: white;
-    justify-content: center
+    /* display: flex; */
+    /* justify-content: space-around; */
+    text-align: center;
 }
 
 .subText {
