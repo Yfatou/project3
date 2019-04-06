@@ -4,7 +4,6 @@ import "./style.css";
 
 const Footer = () => {
     return (
-        // <body className="page-footer">
         <footer  className=" page-footer sticky" id="footerpadding">
             <div >
                 <div className="row">
@@ -22,10 +21,7 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
-        // </body>
-
     );
-
 }
 
 export default Footer;

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-// import Jumbotron from "../components/Jumbotron";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import API from "../../utils/API"
 
 class SignUpBtn extends Component {
 
-constructor() {
+  constructor() {
     super();
     this.state = { 
       isAuthenticated: false, 
@@ -17,26 +16,11 @@ constructor() {
       tokenId: "",
       email: "",
       email_verified: "",
-      name: "",
       picture: "",
       given_name: "",
       family_name: "",
     };
-};
-  // state = {
-  //   googleId: "",
-  //   tokenId: "",
-  //   email: "",
-  //   email_verified: "",
-  //   name: "",
-  //   picture: "",
-  //   given_name: "",
-  //   family_name: "",
-  // };
-
-  // componentDidMount() {
-  //   this.loadGoogle();
-  // }
+  };
 
   loadGoogle = (userDbResponse) => {
     API.getGoogle()
@@ -58,9 +42,6 @@ constructor() {
   };
 
   googleResponse = (response) => {
-    // console.log(response);
-    // // work on grabbing API 
-
     this.setState({ 
       googleId: response.profileObj.googleId,
       tokenId: response.tokenId,
@@ -72,8 +53,6 @@ constructor() {
 
     console.log(this.state.googleId);
 
-
-    // if (this.state.googleId) {
     API.saveGoogle({  
           googleId: this.state.googleId,
           tokenId: this.state.tokenId,
@@ -84,9 +63,6 @@ constructor() {
           family_name: this.state.family_name
     })
     .then(res =>{
-      // this.loadGoogle(res)
-      console.log(`userDbResponse`)
-      console.log(res)
       sessionStorage.setItem("userObjectId", res.data._id);
       console.log(sessionStorage.getItem("userObjectId"))
 
@@ -96,47 +72,7 @@ constructor() {
 
     })
     .catch(err => console.log(err));
-
-
-  // //   .then(function (response) {
-  // //     //handle success
-  // //     console.log(response);
-  // // })
-  // //   .catch(err => console.log(err));
-
-  // }
-    
-
-    // work on grabbing API
-    let Gname = response.profileObj.givenName;
-
-    sessionStorage.setItem("userFirstName", response.profileObj.givenName);
-    sessionStorage.setItem("userLastName", response.profileObj.familyName);
-    sessionStorage.setItem("userEmail", response.profileObj.email);
-    sessionStorage.setItem("googleId", response.profileObj.googleId);
-    sessionStorage.setItem("userPic", response.profileObj.imageUrl);
-    this.setState({ isAuthenticated: true, token: '', user: null, name: Gname })
-
-  
   };
-
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-
-  //   if (this.state.googleId) {
-  //     API.saveGoogle({  
-  //           googleId: this.state.googleId,
-  //           tokenId: this.state.tokenId,
-  //           email: this.state.email,
-  //           name: this.state.name,
-  //           picture: this.state.picture,
-  //           given_name: this.state.given_name,
-  //           family_name: this.state.family_name
-  //     })
-  //     .then(res => this.loadGoogle())
-  //       .catch(err => console.log(err));
-
-  // }};
 
 
   onFailure = (error) => {
@@ -153,7 +89,6 @@ constructor() {
       :
       (<h2> Welcome {this.state.name} </h2>);
 
-    console.log(this.state.isAuthenticated);
     let content = !!this.state.isAuthenticated ?
       (
         <div>
@@ -173,14 +108,12 @@ constructor() {
             onSuccess={this.googleResponse}
             onFailure={this.onFailure}
             prompt={"consent"}
-            // onClick={this.handleFormSubmit}
           />
         </div>
       );
 
     return (
       <div>
-        {/* {this.googleResponse} */}
         {content}
         {WelcomeMsg}
       </div>

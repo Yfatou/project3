@@ -3,7 +3,6 @@ import "./style.css";
 
 const MyJumbo = ({ children }) => {
     return (
-
         <div class="container">
             {children}
         </div>

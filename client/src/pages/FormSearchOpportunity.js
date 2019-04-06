@@ -46,21 +46,12 @@ class FormSearchOpportunity extends Component {
     });
   };
   handleIMBtnSubmit =   event => {
-
     event.preventDefault();
-     
-
-   // window.location.href="/send";
- //   this.browserHistory.push('/send');
-  //  this.history.pushState(null, 'send');
-    
   };
   // When the form is submitted, search the db for the value of `this.state.inputSearch`
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchServices(this.state.inputSearch);
-
-
   };
 
   render() {

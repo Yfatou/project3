@@ -13,26 +13,19 @@ class ValidationModal extends React.Component {
       this.state = {
         show: false,
       };
-
-    //   console.log(this.props.show)
-    //   console.log(this.state.show)
-    //   console.log(props)
-
     }
 
     componentWillReceiveProps(newProps) {
-        if(newProps.show !== this.state.show) {
-            this.setState(newProps)
-        }
+      if(newProps.show !== this.state.show) {
+        this.setState(newProps)
+      }
     }
   
     handleClose() {
-        console.log("handle close");
       this.setState({ show: false });
     }
   
     handleShow() {
-        console.log("handle show");
       this.setState({ show: true });
     }
   
@@ -58,8 +51,5 @@ class ValidationModal extends React.Component {
       );
     }
   }
-  
-//   render(<ValidationModal />);
-
 
 export default ValidationModal;

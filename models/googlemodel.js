@@ -16,7 +16,6 @@ const googleSchema = new Schema({
               ref: "Service"
           }
       ]
-    // locale: { type: String}
   });
 
 const Google = mongoose.model("Google", googleSchema);

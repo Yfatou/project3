@@ -1,28 +1,31 @@
 
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left: 0;
-  }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
 
 .nav-wrapper {
-    background:  #2c3e50;
+  background:  #2c3e50;
     
 }  
 
-#brand-logo1 {
-    /* color:#e74c3c; */
-    line-height:1.6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding:0.5em;
-    font-weight: bolder;
+.brand{
+  text-align: left;
+}
+  
+.brand span{
+  color: #e74c3c;
 }
 
-.brand{
-    text-align: left;
-  }
-  
-  .brand span{
-    color: #e74c3c;
-  }
+/* .logOutBtn {
+  height: 10%;
+} */
+
+#brand-logo1 {
+  line-height:1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding:0.5em;
+  font-weight: bolder;
+}

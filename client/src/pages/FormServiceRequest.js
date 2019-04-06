@@ -5,9 +5,6 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 import Card from "../components/Card";
 import ValidationModal from "../components/ValidationModal";
 
-// import Calendar from 'react-calendar';
-
-
 
 class FormServiceRequest extends Component {
   state = {
@@ -78,31 +75,21 @@ class FormServiceRequest extends Component {
         .then(res => {
           console.log('saved service')
           this.loadServices()
-          // this.setState({shouldShowModal: true})
           this.modalChild.current.handleShow();
         })
         .catch(err => alert("Make sure to log in!"));
     }
 
-    // Insert manual reference here to 'join' the collections
-    // get user's object id..?
-    // api.get(id)
-
     API.appendGoogleId({})
-
-    // db.collectionName.update({“first_name”: “Prashant”}, {$set: {“sir_name”: “Patil”}}, {multi: true})
-
   };
 
 
   render() {
-    console.log('users obj id')
-    console.log(sessionStorage.getItem("userObjectId"))
 
     return (
-      <div className="container " style={{ width: '90%', background: 'white', height: '80%', border: '2px solid', boxShadow: 'none', marginTop: '4%' }}>
+      <div className="container " style={{border:'none', background:'white'}}>
 
-        <Card style={{ borderColor: 'white' }}>
+        <Card >
           <div className="cardHeader" >
             <h1 className=" title ">What Assistance Would You Like To Request For?</h1>
           </div>
@@ -110,12 +97,10 @@ class FormServiceRequest extends Component {
 
             <form >
               <Input
-
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
                 placeholder="Assistance Needed (required)"
-
               />
               <Input
                 value={this.state.zip}
@@ -123,29 +108,19 @@ class FormServiceRequest extends Component {
                 name="zip"
                 placeholder="Zip (required)"
               />
-
-
-
               <Input
                 id="datepicker"
                 readonly
                 type="date"
                 name="date"
                 onChange={this.handleInputChange}
-
                 placeholder="Date(required)"
-
               />
-
-
-
               <Input
-
                 value={this.state.time}
                 onChange={this.handleInputChange}
                 name="time"
                 placeholder="Time (Optional)"
-
               />
               <TextArea
                 value={this.state.notes}
@@ -153,9 +128,7 @@ class FormServiceRequest extends Component {
                 name="notes"
                 placeholder="Notes (Optional)"
               />
-
               <FormBtn
-                // disabled={!(this.state.zip && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Assistance Request
