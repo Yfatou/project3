@@ -18,11 +18,10 @@ Click here https://seniornextdoor-live1.herokuapp.com/ to access to the deployed
 
 ## How to request help?
 After the user logged in with google, he/she is redirected to the options page. 
-Once the choice of making a request is done, a form will allow the user to enter all the informations concerning the request.
+The user can then chose the optin "Post a service request", a form will allow the user to enter all the informations concerning the request.
 Name, email, zipcode and date of the requested services should be entered.
 After submitting the request, a message will tell the user that the request have been submitted.
 
-The request can be viewed on the "Search opportunities"
 
 
 ![](SeniorNextDoor_demo1.gif)
@@ -30,9 +29,9 @@ The request can be viewed on the "Search opportunities"
 
 
 ## How to look for Volunteer opportunities?
-To look for Volunteer opportunities, the user does not have to logged in. 
-A click on the "Search opportunities" link (on the navigation bar) will display a search form. The user can then enter a zipcode to see all the requests in the chosen area.
-For each request, a button "I'm IN" and a link to the profile of the requester is also available. 
+To look for Volunteer opportunities the user will, after login, choose the option "Find a Volunteer opportunity".
+He will then be redirected to a Search opportunities page with a search form. The user can then enter a zipcode to see all the requests in the chosen area.
+For each request, a button "I'm IN" is available. 
 When the volunteer click on the "I'm IN" button, he/she will be redirected to a contact form. Once filled, the informations in the form will be sent to the requester.
 
 The requester can then contact the volunteer.
