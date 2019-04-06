@@ -18,7 +18,7 @@ Click here https://seniornextdoor-live1.herokuapp.com/ to access to the deployed
 
 ## How to request help?
 After the user logged in with google, he/she is redirected to the options page. 
-The user can then chose the optin "Post a service request", a form will allow the user to enter all the informations concerning the request.
+The user can then chose the option "Post a service request", a form will allow the user to enter all the informations concerning the request.
 Name, email, zipcode and date of the requested services should be entered.
 After submitting the request, a message will tell the user that the request have been submitted.
 
