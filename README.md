@@ -24,7 +24,7 @@ After submitting the request, a message will tell the user that the request have
 
 
 
-![](SeniorNextDoor_demo1.gif)
+![](SeniorNextDoor_demo2.gif)
 
 
 
@@ -38,7 +38,7 @@ The requester can then contact the volunteer.
 
 For safety purpose, we choosed to not let the Volunteer contact the requester directly.
 
-![](SeniorNextDoor_demo2.gif)
+![](SeniorNextDoor_demo1.gif)
 
 ![](SeniorNextDoor_demo3.gif)
 
