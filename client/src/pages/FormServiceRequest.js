@@ -88,9 +88,9 @@ class FormServiceRequest extends Component {
     console.log(sessionStorage.getItem("userObjectId"))
 
     return (
-      <div className="container " style={{width:'90%', background:'white', height:'80%', border:'2px solid', boxShadow:'none', marginTop:'4%'}}>
+      <div className="container " style={{border:'none', background:'white'}}>
  
-        <Card style={{borderColor:'white'}}>
+        <Card >
           <div className="cardHeader" >
           <h1 className=" title ">What Assistance Would You Like To Request For?</h1>
           </div>
